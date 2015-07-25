@@ -8,7 +8,6 @@ A child theme of Twenty Twelve built for http://www.steffanick.com/.
 * Added Google Search (searchform.php)
 * Added 404.php
 * Added ease transitions links and header (style.css)
-*Styled 
 ## 0.1.0
 * Added Google API Key (functions.php)
 * Added Google Webfont (functions.php)
