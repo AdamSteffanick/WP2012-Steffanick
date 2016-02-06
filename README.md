@@ -1,6 +1,10 @@
 # WP2012-Steffanick
 A child theme of Twenty Twelve built for http://www.steffanick.com/.
 
+## 0.4.0
+* Added scroll changes (functions.php)
+* Added scroll changes (style.css)
+
 ## 0.3.1
 * Moved JavaScript from <head> (functions.php)
   * Google API Key
