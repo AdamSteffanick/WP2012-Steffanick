@@ -1,6 +1,12 @@
 # WP2012-Steffanick
 A child theme of Twenty Twelve built for http://www.steffanick.com/.
 
+## 0.3.1
+* Moved JavaScript from <head> (functions.php)
+  * Google API Key
+  * Google Webfont
+  * Google Analytics
+
 ## 0.3.0
 * Added theme to GitHub
 * Added LISENCE

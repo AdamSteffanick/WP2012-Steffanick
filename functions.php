@@ -30,7 +30,7 @@ function theme_google_analytics() {
 	include_once($_SERVER["DOCUMENT_ROOT"]."/static/analyticstracking.php");
 	echo '' . "\n";
 }
-add_action( 'wp_head', 'theme_google_apikey' );
-add_action( 'wp_head', 'theme_google_webfonts' );
-add_action( 'wp_head', 'theme_google_analytics' );
+add_action( 'wp_footer', 'theme_google_apikey' );
+add_action( 'wp_footer', 'theme_google_webfonts' );
+add_action( 'wp_footer', 'theme_google_analytics' );
 ?>
