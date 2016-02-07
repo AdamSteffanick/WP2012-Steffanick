@@ -1,6 +1,10 @@
 # WP2012-Steffanick
 A child theme of Twenty Twelve built for http://www.steffanick.com/.
 
+## 0.4.1
+* Added .site-header h1 transition (style.css)
+* Refactored style.css
+
 ## 0.4.0
 * Added scroll changes (functions.php)
 * Added scroll changes (style.css)

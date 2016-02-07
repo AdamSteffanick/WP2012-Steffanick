@@ -30,7 +30,29 @@ function theme_google_analytics() {
 	include_once($_SERVER["DOCUMENT_ROOT"]."/static/analyticstracking.php");
 	echo '' . "\n";
 }
+function theme_scroll_changes() {
+echo '<script type="text/javascript">
+	(function ($) {
+		$(document).on(\'ready\', function() {
+			$(window).on(\'resize\', function() {
+				var mainbottom = $(\'hgroup\').offset().top + $(\'hgroup\').height();
+				$(window).on(\'scroll\',function(){
+					stop = Math.round($(window).scrollTop());
+					if (stop > mainbottom) {
+						$(\'.main-navigation\').addClass(\'past-hgroup\');
+						$(\'#main\').addClass(\'past-hgroup\');
+					} else {
+						$(\'.main-navigation\').removeClass(\'past-hgroup\');
+						$(\'#main\').removeClass(\'past-hgroup\');
+					}
+				});
+			}).trigger(\'resize\');
+		});
+	}(jQuery));
+	</script>' . "\n";
+}
 add_action( 'wp_footer', 'theme_google_apikey' );
 add_action( 'wp_footer', 'theme_google_webfonts' );
 add_action( 'wp_footer', 'theme_google_analytics' );
+add_action( 'wp_footer', 'theme_scroll_changes' );
 ?>
