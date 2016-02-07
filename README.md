@@ -1,5 +1,5 @@
 # WP2012-Steffanick
-A child theme of Twenty Twelve built for http://www.steffanick.com/.
+A WordPress child theme of Twenty Twelve built for http://www.steffanick.com/.
 
 ## 0.4.1
 * Added .site-header h1 transition (style.css)
