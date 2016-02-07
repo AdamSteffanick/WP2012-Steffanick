@@ -10,7 +10,7 @@ A child theme of Twenty Twelve built for http://www.steffanick.com/.
 * Added scroll changes (style.css)
 
 ## 0.3.1
-* Moved JavaScript from <head> (functions.php)
+* Moved JavaScript from head (functions.php)
   * Google API Key
   * Google Webfont
   * Google Analytics
