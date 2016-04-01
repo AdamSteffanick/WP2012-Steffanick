@@ -1,58 +1,99 @@
 <?php
 function theme_copyright($year = 'auto') {
-	if(intval($year) == 'auto'){ $year = date('Y'); }
-	if(intval($year) == date('Y')){ echo intval($year); }
-	if(intval($year) < date('Y')){ echo intval($year) . '&#8211;' . date('Y'); }
-	if(intval($year) > date('Y')){ echo date('Y'); }
+  if(intval($year) == 'auto'){ $year = date('Y'); }
+  if(intval($year) == date('Y')){ echo intval($year); }
+  if(intval($year) < date('Y')){ echo intval($year) . '&#8211;' . date('Y'); }
+  if(intval($year) > date('Y')){ echo date('Y'); }
 }
 function theme_google_apikey() {
-	echo '<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAKEWwp97y-1K7E7cflJxsThSTNpMh0S8BPVhWd-YCqcVx8rMKGxQhtrSfnS-FxOzCdS4XvViAXBVtHQ"></script>' . "\n";
+  echo '<script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAKEWwp97y-1K7E7cflJxsThSTNpMh0S8BPVhWd-YCqcVx8rMKGxQhtrSfnS-FxOzCdS4XvViAXBVtHQ"></script>' . "\n";
 }
 function theme_google_webfonts() {
-	echo '<script type="text/javascript">
-		WebFontConfig = {
-			google: {
-				families: [ \'Noto+Sans::latin\' ]
-			}
-		};
-		(function() {
-			var wf = document.createElement(\'script\');
-			wf.src = (\'https:\' == document.location.protocol ? \'https\' : \'http\') +
-			\'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js\';
-			wf.type = \'text/javascript\';
-			wf.async = \'true\';
-			var s = document.getElementsByTagName(\'script\')[0];
-			s.parentNode.insertBefore(wf, s);
-		})();
-	</script>' . "\n";
+  echo '<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ \'Noto+Sans:400,400italic,700,700italic:latin,latin-ext\' ] }
+  };
+  (function() {
+    var wf = document.createElement(\'script\');
+    wf.src = \'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js\';
+    wf.type = \'text/javascript\';
+    wf.async = \'true\';
+    var s = document.getElementsByTagName(\'script\')[0];
+    s.parentNode.insertBefore(wf, s);
+  })(); </script>' . "\n";
 }
 function theme_google_analytics() {
-	include_once($_SERVER["DOCUMENT_ROOT"]."/static/analyticstracking.php");
-	echo '' . "\n";
+  include_once($_SERVER["DOCUMENT_ROOT"]."/static/analyticstracking.php");
+  echo '' . "\n";
 }
 function theme_scroll_changes() {
 echo '<script type="text/javascript">
-	(function ($) {
-		$(document).on(\'ready\', function() {
-			$(window).on(\'resize\', function() {
-				var mainbottom = $(\'hgroup\').offset().top + $(\'hgroup\').height();
-				$(window).on(\'scroll\',function(){
-					stop = Math.round($(window).scrollTop());
-					if (stop > mainbottom) {
-						$(\'.main-navigation\').addClass(\'past-hgroup\');
-						$(\'#main\').addClass(\'past-hgroup\');
-					} else {
-						$(\'.main-navigation\').removeClass(\'past-hgroup\');
-						$(\'#main\').removeClass(\'past-hgroup\');
-					}
-				});
-			}).trigger(\'resize\');
-		});
-	}(jQuery));
-	</script>' . "\n";
+  (function ($) {
+    $(document).on(\'ready\', function() {
+      $(window).on(\'resize\', function() {
+        var mainbottom = $(\'hgroup\').offset().top + $(\'hgroup\').height();
+        $(window).on(\'scroll\',function(){
+          stop = Math.round($(window).scrollTop());
+          if (stop > mainbottom) {
+            $(\'.main-navigation\').addClass(\'past-hgroup\');
+            $(\'#main\').addClass(\'past-hgroup\');
+          } else {
+            $(\'.main-navigation\').removeClass(\'past-hgroup\');
+            $(\'#main\').removeClass(\'past-hgroup\');
+          }
+        });
+      }).trigger(\'resize\');
+    });
+  }(jQuery));
+  </script>' . "\n";
 }
-add_action( 'wp_footer', 'theme_google_apikey' );
+function theme_dequeue_fonts() {
+  wp_dequeue_style( 'twentytwelve-fonts' );
+}
+function theme_cdn_jquery() {
+  if (!is_admin()) {
+    wp_deregister_script('jquery-core');
+    wp_register_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', true, null, true);
+    wp_enqueue_script('jquery-core');
+    wp_deregister_script('jquery-migrate');
+    wp_register_script('jquery-migrate', 'https://code.jquery.com/jquery-migrate-1.2.1.min.js', true, null, true);
+    wp_enqueue_script('jquery-migrate');
+  }
+}
+function theme_remove_cssjs_ver( $src ) {
+  if( strpos( $src, '?ver=' ) )
+    $src = remove_query_arg( 'ver', $src );
+  return $src;
+}
+function theme_cse() {
+echo '<script type="text/javascript">
+  (function ($) {
+    var cse = \'<gcse:searchbox-only enableAutoComplete="true" resultsUrl="http://www.steffanick.com/search/"></gcse:searchbox-only>\'
+    $(document).on(\'ready\', function() {
+      $( "#gs-search-cse" ).click(function() {
+        $.getScript( "http://www.steffanick.com/static/modules/cse/cse.js" )
+        .done(function() {
+          $( "#gs-search" ).html(cse);
+          setTimeout(function() { $(\'input[name="search"]\').focus() }, 200);
+        });
+      });
+    });
+  }(jQuery));
+  </script>' . "\n";
+}
+function theme_cdn_bootstrap() {
+  wp_register_script('bootstrap-js', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', true, null, true);
+  wp_enqueue_script('bootstrap-js');
+}
+add_filter( 'style_loader_src', 'theme_remove_cssjs_ver', 30, 2 );
+add_filter( 'script_loader_src', 'theme_remove_cssjs_ver', 30, 2 );
+
+add_action( 'wp_enqueue_scripts', 'theme_cdn_jquery' );
+add_action( 'wp_enqueue_scripts', 'theme_dequeue_fonts', 11 );
+add_action( 'wp_enqueue_scripts', 'theme_cdn_bootstrap', 20 );
+//add_action( 'wp_footer', 'theme_google_apikey' );
 add_action( 'wp_footer', 'theme_google_webfonts' );
 add_action( 'wp_footer', 'theme_google_analytics' );
-add_action( 'wp_footer', 'theme_scroll_changes' );
+add_action( 'wp_footer', 'theme_scroll_changes', 20 );
+add_action( 'wp_footer', 'theme_cse', 20 );
 ?>

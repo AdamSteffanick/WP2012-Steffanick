@@ -14,19 +14,13 @@ get_header(); ?>
 			<section class="directory">
 				<h1>Topics</h1>
 				<ul>
-					<?php wp_list_categories('title_li='); ?>
+					<?php wp_list_categories('title_li=&feed=RSS'); ?>
 				</ul>
 			</section>
 			<section class="directory">
 				<h1>Tags</h1>
 				<ul>
 					<?php wp_tag_cloud(); ?>
-				</ul>
-			</section>
-			<section class="directory">
-				<h1>Date</h1>
-				<ul>
-					<?php wp_get_archives('type=monthly'); ?>
 				</ul>
 			</section>
 		</div><!-- .entry-content -->

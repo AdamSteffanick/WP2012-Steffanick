@@ -1,5 +1,19 @@
 # WP2012-Steffanick
-A WordPress child theme of Twenty Twelve built for http://www.steffanick.com/.
+A WordPress child theme of Twenty Twelve built for http://www.steffanick.com
+
+## 0.5.0
+* Removed @import (style.css)
+* Removed Open Sans (functions.php)
+* Updated font JavaScript (functions.php)
+* Added jQuery CDN (functions.php)
+* Added Bootstrap 3.3.6 JavaScript CDN (functions.php)
+* Added Bootstrap 3.3.6 CSS (style.css)
+* Added Bootstrap 3.3.6 Glyphicons CDN (style.css)
+* Removed monthly blog archives (archives.php)
+* Added RSS to blog archives (archives.php)
+* Updated searchform.php for lazy loading Google Custom Search Engine
+* Added lazy loading for Google Custom Search Engine (functions.php)
+* Added setTimeout focus for search (functions.php)
 
 ## 0.4.1
 * Added .site-header h1 transition (style.css)
@@ -25,7 +39,7 @@ A WordPress child theme of Twenty Twelve built for http://www.steffanick.com/.
 * Added 404.php
 * Added searchform.php
 * Added ease transitions to links and header (style.css)
-* Added Google Search (searchform.php)
+* Added Google Custom Search Engine (searchform.php)
 
 ## 0.1.0
 * Added footer.php
