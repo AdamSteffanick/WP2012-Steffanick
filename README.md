@@ -4,6 +4,7 @@ A WordPress child theme of Twenty Twelve built for http://www.steffanick.com
 ## 0.5.0
 * Removed @import (style.css)
 * Removed Open Sans (functions.php)
+* Removed version information from .css and .js (functions.php)
 * Updated font JavaScript (functions.php)
 * Added jQuery CDN (functions.php)
 * Added Bootstrap 3.3.6 JavaScript CDN (functions.php)
