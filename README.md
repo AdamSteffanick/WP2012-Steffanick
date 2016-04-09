@@ -1,6 +1,11 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for http://www.steffanick.com
 
+## 0.6.0
+* Added Google Code Prettify CDN (functions.php)
+* Added Google Code Prettify line numbers (style.css)
+* Added escape HTML in code tags (functions.php)
+
 ## 0.5.0
 * Removed @import (style.css)
 * Removed Open Sans (functions.php)

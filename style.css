@@ -5,7 +5,7 @@ Author: Adam Steffanick
 Author URI: http://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for http://www.steffanick.com
 Template: twentytwelve
-Version: 0.5.0
+Version: 0.6.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -9079,3 +9079,8 @@ input.gsc-search-button:hover {
 	font-size: 17.5px;
 	font-size: 1.25rem;
 }
+/* =Google Code Prettify
+-------------------------------------------------------------- */
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8
+{ list-style-type: decimal !important }
