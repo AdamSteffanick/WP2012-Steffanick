@@ -14,7 +14,7 @@
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'twentytwelve_credits' ); ?>
-			<p>&copy;<?php theme_copyright('2009') ?> <a href="http://www.steffanick.com/adam/" title="Adam Steffanick">Adam Steffanick</a></p>
+			<p>&copy;<?php theme_copyright('2009') ?> <a href="https://www.steffanick.com/adam/" title="Adam Steffanick">Adam Steffanick</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
