@@ -68,10 +68,10 @@ function theme_remove_cssjs_ver( $src ) {
 function theme_cse() {
 echo '<script type="text/javascript">
   (function ($) {
-    var cse = \'<gcse:searchbox-only enableAutoComplete="true" resultsUrl="http://www.steffanick.com/search/"></gcse:searchbox-only>\'
+    var cse = \'<gcse:searchbox-only enableAutoComplete="true" resultsUrl="https://www.steffanick.com/search/"></gcse:searchbox-only>\'
     $(document).on(\'ready\', function() {
       $( "#gs-search-cse" ).click(function() {
-        $.getScript( "http://www.steffanick.com/static/modules/cse/cse.js" )
+        $.getScript( "https://www.steffanick.com/static/modules/cse/cse.js" )
         .done(function() {
           $( "#gs-search" ).html(cse);
           setTimeout(function() { $(\'input[name="search"]\').focus() }, 200);

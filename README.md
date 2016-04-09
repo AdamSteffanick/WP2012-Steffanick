@@ -1,6 +1,9 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for http://www.steffanick.com
 
+## 0.6.1
+* Added SSL to lazy loading for Google Custom Search Engine (functions.php)
+
 ## 0.6.0
 * Added Google Code Prettify CDN (functions.php)
 * Added Google Code Prettify line numbers (style.css)
