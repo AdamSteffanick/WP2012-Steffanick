@@ -1,6 +1,12 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for http://www.steffanick.com
 
+## 0.6.2
+* Changed jQuery CDN (functions.php)
+* Upgraded jQuery to 1.12.3 (functions.php)
+* Upgraded jQuery Migrate to 1.4.0 (functions.php)
+* Incorporated Twenty Twelve 2.0 (style.css)
+
 ## 0.6.1
 * Added SSL to lazy loading for Google Custom Search Engine (functions.php)
 * Added SSL to footer link (footer.php)

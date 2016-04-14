@@ -53,10 +53,10 @@ function theme_dequeue_fonts() {
 function theme_cdn_jquery() {
   if (!is_admin()) {
     wp_deregister_script('jquery-core');
-    wp_register_script('jquery-core', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', true, null, true);
+    wp_register_script('jquery-core', 'https://code.jquery.com/jquery-1.12.3.min.js', true, null, true);
     wp_enqueue_script('jquery-core');
     wp_deregister_script('jquery-migrate');
-    wp_register_script('jquery-migrate', 'https://code.jquery.com/jquery-migrate-1.2.1.min.js', true, null, true);
+    wp_register_script('jquery-migrate', 'https://code.jquery.com/jquery-migrate-1.4.0.min.js', true, null, true);
     wp_enqueue_script('jquery-migrate');
   }
 }
