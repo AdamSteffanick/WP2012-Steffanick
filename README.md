@@ -1,5 +1,16 @@
 # WP2012-Steffanick
-A WordPress child theme of Twenty Twelve built for http://www.steffanick.com
+A WordPress child theme of Twenty Twelve built for https://www.steffanick.com
+
+## 0.6.3
+* Added Bootstrap 3.3.6 CSS CDN (functions.php)
+* Added Bootstrap CSS as dependency of theme CSS (functions.php)
+* Added Twenty Twelve navigation.js enqueue (functions.php)
+* Updated search button style (style.css)
+* Updated URI (README.md; style.css)
+* Removed lazy loading for Google Custom Search Engine (functions.php)
+* Removed lazy loading Google Custom Search Engine (searchform.php)
+* Removed Bootstrap 3.3.6 CSS (style.css)
+* Removed jQuery Migrate to 1.4.0 (functions.php)
 
 ## 0.6.2
 * Changed jQuery CDN (functions.php)
@@ -17,19 +28,19 @@ A WordPress child theme of Twenty Twelve built for http://www.steffanick.com
 * Added escape HTML in code tags (functions.php)
 
 ## 0.5.0
-* Removed @import (style.css)
-* Removed Open Sans (functions.php)
-* Removed version information from .css and .js (functions.php)
-* Updated font JavaScript (functions.php)
 * Added jQuery CDN (functions.php)
 * Added Bootstrap 3.3.6 JavaScript CDN (functions.php)
 * Added Bootstrap 3.3.6 CSS (style.css)
 * Added Bootstrap 3.3.6 Glyphicons CDN (style.css)
-* Removed monthly blog archives (archives.php)
 * Added RSS to blog archives (archives.php)
-* Updated searchform.php for lazy loading Google Custom Search Engine
 * Added lazy loading for Google Custom Search Engine (functions.php)
 * Added setTimeout focus for search (functions.php)
+* Updated searchform.php for lazy loading Google Custom Search Engine
+* Updated font JavaScript (functions.php)
+* Removed monthly blog archives (archives.php)
+* Removed @import (style.css)
+* Removed Open Sans (functions.php)
+* Removed version information from .css and .js (functions.php)
 
 ## 0.4.1
 * Added .site-header h1 transition (style.css)
