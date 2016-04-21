@@ -1,6 +1,9 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for https://www.steffanick.com
 
+## 0.6.4
+* Refactored functions.php
+
 ## 0.6.3
 * Added Bootstrap 3.3.6 CSS CDN (functions.php)
 * Added Bootstrap CSS as dependency of theme CSS (functions.php)
