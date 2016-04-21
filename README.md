@@ -1,6 +1,9 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for https://www.steffanick.com
 
+## 0.6.5
+* Downgraded jQuery to 1.12.0 for scroll changes (functions.php)
+
 ## 0.6.4
 * Refactored functions.php
 

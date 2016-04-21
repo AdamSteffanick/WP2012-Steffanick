@@ -58,7 +58,7 @@ function theme_javascript() {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
     /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-1.12.3.min.js', '', null, false);
+    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-1.12.0.min.js', '', null, false);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
   }
@@ -82,7 +82,7 @@ echo '<script type="text/javascript">
       $(window).on(\'resize\', function() {
         var mainbottom = $(\'hgroup\').offset().top + $(\'hgroup\').height();
         $(window).on(\'scroll\',function(){
-          stop = Math.round($(window).scrollTop());
+          var stop = Math.round($(window).scrollTop());
           if (stop > mainbottom) {
             $(\'.main-navigation\').addClass(\'past-hgroup\');
             $(\'#main\').addClass(\'past-hgroup\');
