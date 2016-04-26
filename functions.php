@@ -54,6 +54,8 @@ function theme_remove_style_id($link) {
 function theme_style() {
   /* enqueue Bootstrap CSS via a CDN */
   wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', '', null, 'all');
+  /* enqueue Font Awesome CSS via a CDN with Bootstrap dependency */
+  wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', 'bootstrap', null, 'all');
   /* remove style.css */
   wp_deregister_style('twentytwelve-style');
   /* register/enqueue style.css with Bootstrap dependency */
@@ -75,7 +77,7 @@ function theme_javascript() {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
     /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-1.12.0.min.js', '', null, false);
+    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-2.1.4.min.js', '', null, false);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
     /* remove wp-embed.min.js */
@@ -93,6 +95,21 @@ function theme_javascript() {
 function theme_google_analytics() {
   include_once($_SERVER["DOCUMENT_ROOT"]."/static/analyticstracking.php");
 }
+
+/* echo browser update */
+function theme_browser_update() {
+echo '<script type="text/javascript"> 
+  var $buoop = {c:2}; 
+  function $buo_f(){
+    var e = document.createElement("script"); 
+    e.src = "https://browser-update.org/update.min.js"; 
+    document.body.appendChild(e);
+  };
+  try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+  catch(e){window.attachEvent("onload", $buo_f)}
+  </script>';
+}
+
 /* echo scroll changes */
 function theme_scroll_changes() {
 echo '<script type="text/javascript">
@@ -131,6 +148,7 @@ add_action( 'wp_enqueue_scripts', 'theme_javascript' );
 add_action( 'after_setup_theme' , 'theme_cleaner' );
 
 add_action( 'wp_footer', 'theme_google_webfonts' );
+add_action( 'wp_footer', 'theme_browser_update' );
 add_action( 'wp_footer', 'theme_scroll_changes', 20 );
 add_action( 'wp_footer', 'theme_google_analytics' );
 ?>

@@ -1,6 +1,15 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for https://www.steffanick.com
 
+## 0.7.0
+* Added Font Awesome 4.6.1 CSS CDN (functions.php)
+* Added browser-update.org JavaScript (functions.php)
+* Added header.php
+* Changed search icon (searchform.php)
+* Upgraded jQuery to 2.1.4 (functions.php)
+* Removed support for older versions of Internet Explorer (header.php)
+* Converted files to UTF-8
+
 ## 0.6.7
 * Changed Google Webfont method from JavaScript to CSS (functions.php)
 * Forced local theme CSS and JavaScript to use the Multisite network home URL (functions.php)

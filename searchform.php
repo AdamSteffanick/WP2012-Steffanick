@@ -3,7 +3,7 @@
     <input id="cse-search-q" name="q" type="text" class="form-control">
     <span class="input-group-btn">
       <button id="cse-search" class="btn btn-default" type="submit" aria-label="Search">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        <span class="fa fa-search" aria-hidden="true"></span>
       </button>
     </span>
   </div><!-- /input-group -->
