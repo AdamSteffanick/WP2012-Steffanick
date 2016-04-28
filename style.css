@@ -5,7 +5,7 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://www.steffanick.com
 Template: twentytwelve
-Version: 0.7.0
+Version: 0.7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -2071,25 +2071,22 @@ footer[role="contentinfo"] a:hover {
 		float: right;
 		width: 31.041666667%;
 	}
-/* Scroll Changes */
+/* Scroll Affix */
 	.main-navigation {
 		max-width: none;
 	}
-	.main-navigation.past-hgroup {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		margin: 0 auto;
-		max-width: none;
-		width: 100%;
-		box-shadow: rgba(0,0,0,0.4) 0 0 5px 0px;
-	}
+  .main-navigation.scroll-affix {
+  		position: fixed;
+  		top: 0;
+  		left: 0;
+  		right: 0;
+  		margin: 0 auto;
+  		max-width: none;
+  		width: 100%;
+  		box-shadow: rgba(0,0,0,0.4) 0 0 5px 0px;
+  }
 	.main-navigation ul.nav-menu {
 		text-align: center;
-	}
-	#main.past-hgroup {
-		margin-top: 44px;
 	}
 }
 /* Minimum width of 960 pixels. */
@@ -2214,7 +2211,7 @@ body .site {
 	padding: 0 24px;
 	padding: 0 1.714285714rem;
 }
-/* =Scroll Changes
+/* =Scroll Affix
 -------------------------------------------------------------- */
 #site-navigation {
 	z-index: 99998;

@@ -70,14 +70,14 @@ function theme_remove_open_sans() {
 }
 /* =JavaScript Functions
 -------------------------------------------------------------- */
-/* load jquery.min.js (CDN), bootstrap.min.js (CDN), navigation.js, and run_prettify.js (CDN); remove jQuery Migrate */
+/* load jquery.min.js (CDN), bootstrap.min.js (CDN), navigation.js, scroll-affix.js and run_prettify.js (CDN); remove jQuery Migrate */
 function theme_javascript() {
   /* load jQuery via a CDN unless logged in as an administrator */
   if (!is_admin()) {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
     /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-2.1.4.min.js', '', null, false);
+    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-2.2.3.min.js', '', null, false);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
     /* remove wp-embed.min.js */
@@ -87,6 +87,8 @@ function theme_javascript() {
   wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', 'jquery-core', null, true);
   /* register/enqueue navigation.js with jQuery dependency before </body> */
   wp_enqueue_script( 'twentytwelve-navigation', network_home_url( '/', 'https' ) . 'wordpress/wp-content/themes/twentytwelve/js/navigation.js', 'jquery-core', null, true );
+  /* register/enqueue scroll-affix.js with jQuery dependency before </body> */
+  wp_enqueue_script( 'scroll-affix', network_home_url( '/', 'https' ) . 'wordpress/wp-content/themes/WP2012-Steffanick/js/scroll-affix.js', 'jquery-core', null, true );
   /* register/enqueue Google Code Prettify JavaScript via a CDN before </body> */
   wp_enqueue_script('google-code_prettify', 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', '', null, true);
 }
@@ -110,33 +112,11 @@ echo '<script type="text/javascript">
   </script>';
 }
 
-/* echo scroll changes */
-function theme_scroll_changes() {
-echo '<script type="text/javascript">
-  (function ($) {
-    $(document).on(\'ready\', function() {
-      $(window).on(\'resize\', function() {
-        var mainbottom = $(\'hgroup\').offset().top + $(\'hgroup\').height();
-        $(window).on(\'scroll\',function(){
-          var stop = Math.round($(window).scrollTop());
-          if (stop > mainbottom) {
-            $(\'.main-navigation\').addClass(\'past-hgroup\');
-            $(\'#main\').addClass(\'past-hgroup\');
-          } else {
-            $(\'.main-navigation\').removeClass(\'past-hgroup\');
-            $(\'#main\').removeClass(\'past-hgroup\');
-          }
-        });
-      }).trigger(\'resize\');
-    });
-  }(jQuery));
-  </script>' . "\n";
-}
 /* =Filters and Actions
 -------------------------------------------------------------- */
 /* NOTE: default priority = 10 */
 
-add_filter( 'the_content',  'theme_code_esc_html' );
+add_filter( 'the_content', 'theme_code_esc_html' );
 add_filter( 'wpseo_json_ld_search_url', 'theme_change_json_ld_search_url' );
 add_filter( 'style_loader_tag' , 'theme_remove_style_id' );
 
@@ -149,6 +129,5 @@ add_action( 'after_setup_theme' , 'theme_cleaner' );
 
 add_action( 'wp_footer', 'theme_google_webfonts' );
 add_action( 'wp_footer', 'theme_browser_update' );
-add_action( 'wp_footer', 'theme_scroll_changes', 20 );
 add_action( 'wp_footer', 'theme_google_analytics' );
 ?>

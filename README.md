@@ -1,6 +1,19 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for https://www.steffanick.com
 
+## 0.7.1
+* Added directory: widgets
+* Added widgets/connect.html (pasted into a text widget)
+* Added directory: js
+* Added js/scroll-affix.js
+* Added .scroll-affix (style.css)
+* Moved scroll changes to scroll-affix.js
+* Fixed scroll changes bug by replacing depricated "$(document).on('ready', function() {" with "$(document).ready(function() {" (scroll-affix.js)
+* Refactored scroll changes (scroll-affix.js)
+* Upgraded jQuery to 2.2.3 (functions.php)
+* Removed function theme_scroll_changes (functions.php)
+* Removed .past-hgroup (style.css)
+
 ## 0.7.0
 * Added Font Awesome 4.6.1 CSS CDN (functions.php)
 * Added browser-update.org JavaScript (functions.php)
