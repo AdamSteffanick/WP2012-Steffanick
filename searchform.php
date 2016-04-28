@@ -1,4 +1,4 @@
-<form id="search" action="https://www.steffanick.com/search/" role="form">
+<form id="search" action="https://www.steffanick.com/search/">
   <div class="input-group">
     <input id="cse-search-q" name="q" type="text" class="form-control">
     <span class="input-group-btn">

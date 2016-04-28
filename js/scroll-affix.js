@@ -5,7 +5,7 @@
       $( ".menu-toggle" ).click(function() {
         $( "#nav-wrapper" ).height($( "#site-navigation" ).height());
       });
-      var mainbottom = $( "hgroup" ).offset().top + $( "hgroup" ).height();
+      var mainbottom = $( "#site-head" ).offset().top + $( "#site-head" ).height();
       $(window).on( "scroll",function(){
         var stop = Math.round($(window).scrollTop());
         if (stop > mainbottom) {

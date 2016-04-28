@@ -1,6 +1,17 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for https://www.steffanick.com
 
+## 0.7.2
+* Added HTML5 Validator link (footer.php)
+* Added function theme_add_style_property (functions.php)
+* Changed function theme_google_webfonts to theme_webfonts (functions.php)
+* Fixed HTML5 warnings and errors (header.php)
+* Fixed HTML5 warnings and errors (searchform.php)
+* Fixed HTML5 warnings and errors (footer.php)
+* Updated HTML5 header elements (scroll-affix.js)
+* Defined #site-title and #colophon for HTML5 fixes (style.css)
+* Moved Font Awesome from head (functions.php)
+
 ## 0.7.1
 * Added directory: widgets
 * Added widgets/connect.html (pasted into a text widget)
