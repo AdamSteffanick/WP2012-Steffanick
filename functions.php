@@ -58,9 +58,6 @@ function theme_style() {
   wp_deregister_style('twentytwelve-style');
   /* register/enqueue style.css with Bootstrap dependency */
   wp_enqueue_style('twentytwelve-style', network_home_url( '/', 'https' ) . 'wordpress/wp-content/themes/WP2012-Steffanick/style.css', 'bootstrap', null, all);
-  /* register/enqueue addtoany.min.css with Bootstrap dependency */
-  wp_deregister_style('A2A_SHARE_SAVE');
-  wp_enqueue_style('A2A_SHARE_SAVE', network_home_url( '/', 'https' ) . 'wordpress/wp-content/plugins/add-to-any/addtoany.min.css', 'twentytwelve-style', null, all);
 }
 /* remove the Open Sans font */
 function theme_remove_open_sans() {
@@ -68,7 +65,7 @@ function theme_remove_open_sans() {
 }
 function theme_webfonts() {
   /* register/enqueue Google WebFont Noto Sans via a CDN */
-  wp_enqueue_style( 'noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic:latin,latin-ext', 'twentytwelve-style', null, all);
+  wp_enqueue_style( 'noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic:latin,latin-ext', '', null, all);
   /* register/enqueue Font Awesome via a CDN with Bootstrap dependency */
   wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css', 'bootstrap', null, 'all');
 }
@@ -102,20 +99,6 @@ function theme_google_analytics() {
   include_once($_SERVER["DOCUMENT_ROOT"]."/static/analyticstracking.php");
 }
 
-/* echo browser update */
-function theme_browser_update() {
-echo '<script type="text/javascript"> 
-  var $buoop = {c:2}; 
-  function $buo_f(){
-    var e = document.createElement("script"); 
-    e.src = "https://browser-update.org/update.min.js"; 
-    document.body.appendChild(e);
-  };
-  try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-  catch(e){window.attachEvent("onload", $buo_f)}
-  </script>';
-}
-
 /* =Filters and Actions
 -------------------------------------------------------------- */
 /* NOTE: default priority = 10 */
@@ -130,9 +113,11 @@ add_action( 'wp_enqueue_scripts', 'theme_remove_open_sans', 11 );
 add_action( 'wp_enqueue_scripts', 'theme_remove_old_ie_support', 11 );
 add_action( 'wp_enqueue_scripts', 'theme_javascript' );
 
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+add_action( 'wp_footer', 'print_emoji_detection_script' );
+
 add_action( 'after_setup_theme' , 'theme_cleaner' );
 
 add_action( 'wp_footer', 'theme_webfonts' );
-add_action( 'wp_footer', 'theme_browser_update' );
 add_action( 'wp_footer', 'theme_google_analytics' );
 ?>

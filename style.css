@@ -3,9 +3,9 @@ Theme Name: WP2012 Steffanick
 Theme URI: https://github.com/AdamSteffanick/WP2012-Steffanick
 Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
-Description: A child theme of Twenty Twelve built for https://www.steffanick.com
+Description: A child theme of Twenty Twelve built for https://www.steffanick.com/
 Template: twentytwelve
-Version: 0.7.2
+Version: 0.7.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1913,6 +1913,19 @@ header {
   margin-left: 42px;
   margin-left: 3rem;
 }
+.entry-content pre,
+.comment-content pre {
+	border: none;
+}
+.entry-content code,
+.comment-content code {
+  color: inherit;
+  background-color: rgb(245,245,245);
+  font-family: Consolas, Monaco, Lucida Console, monospace;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 1.714285714;
+}
 /* =Repeatable patterns
 -------------------------------------------------------------- */
 /* Form fields, general styles first */
@@ -2294,9 +2307,24 @@ img.gcsc-branding-img-noclear {
 .directory ul {
   font-size: 17.5px;
   font-size: 1.25rem;
+  line-height: 26.25px;
+  line-height: 1.5rem;
+  list-style: none;
 }
+
 /* =Google Code Prettify
 -------------------------------------------------------------- */
-li.L0, li.L1, li.L2, li.L3,
-li.L5, li.L6, li.L7, li.L8
-{ list-style-type: decimal !important }
+pre.prettyprint {
+  border: none !important
+}
+li.L0, li.L1, li.L2, li.L3,li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: decimal !important
+}
+li.L1,li.L3,li.L5,li.L7,li.L9 {
+  background: transparent !important
+}
+/* =Code Prettify
+-------------------------------------------------------------- */
+pre code {
+  white-space: inherit;
+}
