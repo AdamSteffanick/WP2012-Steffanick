@@ -207,13 +207,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [Unreleased]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.3...HEAD
 [0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.2...v0.7.3
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.1...v0.7.2
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.0...v0.7.1
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.7...v0.7.0
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.6...v0.6.7
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.5...v0.6.6
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.4...v0.6.5
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.3...v0.6.4
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.2...v0.6.3
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.1...v0.6.2
-[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.0...v0.6.1
+[0.7.2]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.1...v0.7.2
+[0.7.1]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.0...v0.7.1
+[0.7.0]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.7...v0.7.0
+[0.6.7]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.6...v0.6.7
+[0.6.6]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.5...v0.6.6
+[0.6.5]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.4...v0.6.5
+[0.6.4]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.3...v0.6.4
+[0.6.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.2...v0.6.3
+[0.6.2]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.1...v0.6.2
+[0.6.1]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.0...v0.6.1
