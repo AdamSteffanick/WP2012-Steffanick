@@ -49,7 +49,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 * jQuery → 2.2.3 (/_functions.php_)
 * refactored scroll changes (/js/_scroll-affix.js_)
-* scroll changes → /js/_scroll-affix.js_
+* scroll changes (/js/_scroll-affix.js_)
 
 ### Removed
 * `.past-hgroup` (style.css)
