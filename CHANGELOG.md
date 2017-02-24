@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 ### Added
 * /_CHANGELOG.md_
+* shields.io version info (/_README.md_)
 
 ### Changed
 * /_README.md_ changelog → /_CHANGELOG.md_
