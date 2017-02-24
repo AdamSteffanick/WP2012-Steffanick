@@ -2,6 +2,6 @@
 A WordPress child theme of Twenty Twelve built for https://steffanick.com/
 
 ## Download
-* [**Latest release 0.7.3**](https://github.com/AdamSteffanick/WP2012-Steffanick/releases/latest)
+* [**Latest release**](https://github.com/AdamSteffanick/WP2012-Steffanick/releases/latest)
 
 [CHANGELOG]: ./CHANGELOG.md
