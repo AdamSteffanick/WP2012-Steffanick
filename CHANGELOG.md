@@ -182,29 +182,32 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.3.0] - 2015-07-19
 ### Added
-* /_LISENCE_
-* /_README.md_
 * theme files → GitHub
 
 ## [0.2.0]
 ### Added
 * /_404.php_
-* /_searchform.php_
-* ease transitions → links & header (/_style.css_)
-* Google Custom Search Engine (/_searchform.php_)
-
-## [0.1.0]
-### Added
 * /_footer.php_
 * /_functions.php_
-* /_style.css_
+* /_searchform.php_
 * copyright (/_footer.php_)
+* ease transitions → links & header (/_style.css_)
 * Google Analytics (/_functions.php_)
 * Google API Key (/_functions.php_)
+* Google Custom Search Engine (/_searchform.php_)
 * Google Webfont (/_functions.php_)
 * sticky footer (/_style.css_)
 * theme colours (/_style.css_)
 * theme layout (/_style.css_)
+
+## [0.1.0]
+### Added
+* /_style.css_
+
+## [Initial commit]
+### Added
+* /_LISENCE_
+* /_README.md_
 
 
 [Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.3...HEAD
@@ -227,3 +230,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [0.3.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/AdamSteffanick/wp2012-s/compare/c87ee07...v0.1.0
+[Initial commit]: https://github.com/AdamSteffanick/wp2012-s/commit/c87ee07783b4605ce4214ebd08372816cd3c41fa
