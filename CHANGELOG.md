@@ -203,3 +203,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * sticky footer (/_style.css_)
 * theme colours (/_style.css_)
 * theme layout (/_style.css_)
+
+
+[Unreleased]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.3...HEAD
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.2...v0.7.3
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.1...v0.7.2
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.7.0...v0.7.1
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.7...v0.7.0
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.6...v0.6.7
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.5...v0.6.6
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.4...v0.6.5
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.3...v0.6.4
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.2...v0.6.3
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.1...v0.6.2
+[0.7.3]: https://github.com/AdamSteffanick/WP2012-Steffanick/compare/v0.6.0...v0.6.1
