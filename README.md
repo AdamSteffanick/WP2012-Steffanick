@@ -1,6 +1,9 @@
 # WP2012-Steffanick
 A WordPress child theme of Twenty Twelve built for https://www.steffanick.com/
 
+## Download
+* [**Latest release**](https://github.com/AdamSteffanick/WP2012-Steffanick/releases/latest)
+
 # Changelog
 All notable changes to this project will be documented in this file.
 
@@ -11,6 +14,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.7.3] - 2017-02-23
 ### Added
 * CSS3 Validator link (/_footer.php_)
+* download latest release (/_README.md_)
 * favicon support (/_header.php_)
 
 ### Changed
