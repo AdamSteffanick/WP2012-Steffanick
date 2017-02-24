@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Changed
 * /_README.md_ changelog → /_CHANGELOG.md_
+* theme name → WP2012-S (./_style.css_)
 
 ## [0.7.3] - 2017-02-23
 ### Added
@@ -183,7 +184,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 * /_LISENCE_
 * /_README.md_
-* files → GitHub
+* theme files → GitHub
 
 ## [0.2.0]
 ### Added
