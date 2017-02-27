@@ -184,6 +184,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 * theme files → GitHub
 
+### Changed
+* theme name → WP2012-Steffanick ([style.css])
+* URI ([README.md] & [style.css])
+
 ## [0.2.0] - 2015-07-25
 ### Added
 * [404.php]
