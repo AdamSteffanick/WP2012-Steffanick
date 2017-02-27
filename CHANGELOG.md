@@ -26,7 +26,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Changed
 * changelog ([README.md])
 * `<code>` element ([style.css])
-* [Google Code Prettify] ([style.css])
+* [Google Code Prettify] design ([style.css])
 * URI ([README.md] & [style.css])
 * [WordPress] Emoji JavaScript → footer ([functions.php])
 
