@@ -245,7 +245,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [archives.php]: ./archives.php
 [CHANGELOG.md]: ./CHANGELOG.md
 [connect.html]: ./connect.html
-[header.php]: .header.php
+[header.php]: ./header.php
 [footer.php]: ./footer.php
 [functions.php]: ./functions.php
 [LISENCE]: https://github.com/AdamSteffanick/wp2012-s/blob/master/LICENSE
