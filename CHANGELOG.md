@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 ### Added
-* /_CHANGELOG.md_
+* [CHANGELOG.md]
 * shields.io version info ([README.md])
 
 ### Changed
@@ -57,7 +57,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * scroll changes ([scroll-affix.js])
 
 ### Removed
-* `.past-hgroup` (style.css)
+* `.past-hgroup` ([style.css])
 * function `theme_scroll_changes` ([functions.php])
 
 
@@ -206,7 +206,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Initial commit]
 ### Added
-* /_LISENCE_
+* [LISENCE]
 * [README.md]
 
 [Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.3...HEAD
