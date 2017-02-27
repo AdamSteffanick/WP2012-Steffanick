@@ -13,7 +13,7 @@
   </div><!-- #main .wrapper -->
   <footer id="colophon">
     <div class="site-info">
-      <?php do_action( 'twentytwelve_credits' ); ?>
+      <?php do_action('twentytwelve_credits'); ?>
       <p>
         &copy;<?php theme_copyright('2009') ?>
         <a href="https://www.steffanick.com/adam/" title="Adam Steffanick">Adam Steffanick</a>

@@ -6,38 +6,43 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [Unreleased]
 ### Added
 * [CHANGELOG.md]
-* shields.io version info ([README.md])
+* [shields.io] version info ([README.md])
 
 ### Changed
+* [Bootstrap] CSS → 3.3.7 ([functions.php])
+* [Bootstrap] JS → 3.3.7 ([functions.php])
+* [Font Awesome] → 4.7.0 ([functions.php])
+* [jQuery] → 2.2.4 ([functions.php])
 * [README.md] changelog → [CHANGELOG.md]
 * theme name → WP2012-S ([style.css])
+* URI ([functions.php], [README.md] & [style.css])
 
 ## [0.7.3] - 2017-02-23
 ### Added
-* CSS3 Validator link ([footer.php])
+* [CSS3 Validator] link ([footer.php])
 * download latest release ([README.md])
 * favicon support ([header.php])
 
 ### Changed
 * changelog ([README.md])
 * `<code>` element ([style.css])
-* Google Code Prettify ([style.css])
+* [Google Code Prettify] ([style.css])
 * URI ([README.md] & [style.css])
-* WordPress Emoji JavaScript → footer ([functions.php])
+* [WordPress] Emoji JavaScript → footer ([functions.php])
 
 ### Removed
-* browser-update.org JavaScript ([functions.php])
+* [browser-update.org] JavaScript ([functions.php])
 * enequeue _addtoany.min.css_ ([functions.php])
 
 ## [0.7.2] - 2016-04-28
 ### Added
 * function `theme_add_style_property` ([functions.php])
-* HTML5 Validator link ([footer.php])
+* [HTML5 Validator] link ([footer.php])
 * `#site-title` & `#colophon` for HTML5 fixes ([style.css])
 
 ### Changed
 * function `theme_google_webfonts` → `theme_webfonts` ([functions.php])
-* Font Awesome → footer ([functions.php])
+* [Font Awesome] → footer ([functions.php])
 * HTML5 header elements ([scroll-affix.js])
 
 ### Fixed
@@ -52,7 +57,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * `.scroll-affix` ([style.css])
 
 ### Changed
-* jQuery → 2.2.3 ([functions.php])
+* [jQuery] → 2.2.3 ([functions.php])
 * refactored scroll changes ([scroll-affix.js])
 * scroll changes ([scroll-affix.js])
 
@@ -67,12 +72,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.7.0] - 2016-04-25
 ### Added
 * [header.php]
-* browser-update.org JavaScript ([functions.php])
-* Font Awesome 4.6.1 CSS CDN ([functions.php])
+* [browser-update.org] JavaScript ([functions.php])
+* [Font Awesome] 4.6.1 CSS CDN ([functions.php])
 
 ### Changed
 * search icon ([searchform.php])
-* jQuery → 2.1.4 ([functions.php])
+* [jQuery] → 2.1.4 ([functions.php])
 * all files → UTF-8
 
 ### Removed
@@ -83,7 +88,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * enequeue _addtoany.min.css_ ([functions.php])
 
 ### Changed
-* Google Webfont method ~~JavaScript~~ → CSS ([functions.php])
+* [Google Fonts] method ~~JavaScript~~ → CSS ([functions.php])
 
 ### Removed
 * stylesheet ID attributes ([functions.php])
@@ -95,17 +100,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.6.6] - 2016-04-21
 ### Changed
-* Yoast SEO schema.org search URL → use Google Custom Search Engine & Multisite network ([functions.php])
+* Yoast SEO schema.org search URL → use [Google Custom Search Engine] & Multisite network ([functions.php])
 
 ### Removed
 * RSD support ([functions.php])
 * Windows Live Writer support ([functions.php])
-* WordPress shortlink support ([functions.php])
-* WordPress generator information ([functions.php])
+* [WordPress] shortlink support ([functions.php])
+* [WordPress] generator information ([functions.php])
 
 ## [0.6.5] - 2016-04-21
 ### Changed
-* jQuery → 1.12.0 for scroll changes ([functions.php])
+* [jQuery] → 1.12.0 for scroll changes ([functions.php])
 
 ## [0.6.4] - 2016-04-20
 ### Changed
@@ -113,51 +118,51 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.6.3] - 2016-04-20
 ### Added
-* Bootstrap 3.3.6 CSS CDN ([functions.php])
-* Bootstrap CSS → dependency of theme CSS ([functions.php])
+* [Bootstrap] 3.3.6 CSS CDN ([functions.php])
+* [Bootstrap] CSS → dependency of theme CSS ([functions.php])
 * enqueue Twenty Twelve _navigation.js_ ([functions.php])
 
 ### Changed
 * search button style ([style.css])
 
 ### Removed
-* Bootstrap 3.3.6 CSS ([style.css])
-* jQuery Migrate 1.4.0 ([functions.php])
-* lazy loading → Google Custom Search Engine ([functions.php] & [searchform.php])
+* [Bootstrap] 3.3.6 CSS ([style.css])
+* [jQuery] Migrate 1.4.0 ([functions.php])
+* lazy loading → [Google Custom Search Engine] ([functions.php] & [searchform.php])
 
 ## [0.6.2] - 2016-04-13
 ### Added
 - Twenty Twelve 2.0 ([style.css])
 
 ### Changed
-* jQuery → 1.12.3 ([functions.php])
-* jQuery CDN ([functions.php])
-* jQuery Migrate → 1.4.0 ([functions.php])
+* [jQuery] → 1.12.3 ([functions.php])
+* [jQuery] CDN ([functions.php])
+* [jQuery] Migrate → 1.4.0 ([functions.php])
 
 ## [0.6.1] - 2016-04-09
 ### Added
 * SSL footer link ([footer.php])
-* SSL lazy loading → Google Custom Search Engine ([functions.php])
+* SSL lazy loading → [Google Custom Search Engine] ([functions.php])
 
 ## [0.6.0] - 2016-04-08
 ### Added
 * escape HTML in `<code>` elements ([functions.php])
-* Google Code Prettify CDN ([functions.php])
-* Google Code Prettify line numbers ([style.css])
+* [Google Code Prettify] CDN ([functions.php])
+* [Google Code Prettify] line numbers ([style.css])
 
 ## [0.5.0] - 2016-03-31
 ### Added
-* Bootstrap 3.3.6 CSS ([style.css])
-* Bootstrap 3.3.6 Glyphicons CDN ([style.css])
-* Bootstrap 3.3.6 JavaScript CDN ([functions.php])
-* jQuery CDN ([functions.php])
-* lazy loading → Google Custom Search Engine ([functions.php])
+* [Bootstrap] 3.3.6 CSS ([style.css])
+* [Bootstrap] 3.3.6 Glyphicons CDN ([style.css])
+* [Bootstrap] 3.3.6 JavaScript CDN ([functions.php])
+* [jQuery] CDN ([functions.php])
+* lazy loading → [Google Custom Search Engine] ([functions.php])
 * RSS blog archives ([archives.php])
 * `setTimeout` focus → search ([functions.php])
 
 ### Changed
 * font JavaScript ([functions.php])
-* lazy loading → Google Custom Search Engine ([searchform.php])
+* lazy loading → [Google Custom Search Engine] ([searchform.php])
 
 ### Removed
 * `@import` ([style.css])
@@ -178,7 +183,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.3.1] - 2016-02-06
 ### Changed
-* Google Analytics, Google API Key, & Google Webfont JavaScript → footer ([functions.php])
+* [Google Analytics], [Google API Key], & [Google Fonts] JavaScript → footer ([functions.php])
 
 ## [0.3.0] - 2015-07-25
 ### Added
@@ -196,10 +201,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [searchform.php]
 * copyright ([footer.php])
 * ease transitions → links & header ([style.css])
-* Google Analytics ([functions.php])
-* Google API Key ([functions.php])
-* Google Custom Search Engine ([searchform.php])
-* Google Webfont ([functions.php])
+* [Google Analytics] ([functions.php])
+* [Google API Key] ([functions.php])
+* [Google Custom Search Engine] ([searchform.php])
+* [Google Fonts] ([functions.php])
 * sticky footer ([style.css])
 * theme colours ([style.css])
 * theme layout ([style.css])
@@ -248,3 +253,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [scroll-affix.js]: ./scroll-affix.js
 [searchform.php]: ./searchform.php
 [style.css]: ./style.css
+
+[Bootstrap]: http://getbootstrap.com/
+[browser-update.org]: http://browser-update.org/
+[CSS3 Validator]: https://jigsaw.w3.org/css-validator/
+[Font Awesome]: http://fontawesome.io/
+[Google Analytics]: https://www.google.com/analytics/
+[Google API Key]: https://console.developers.google.com/
+[Google Code Prettify]: https://github.com/google/code-prettify
+[Google Custom Search Engine]: https://developers.google.com/custom-search/
+[Google Fonts]: https://fonts.google.com/
+[HTML5 Validator]: https://validator.w3.org/nu/
+[jQuery]: https://jquery.com/
+[shields.io]: http://shields.io/
+[WordPress]: https://wordpress.org/
