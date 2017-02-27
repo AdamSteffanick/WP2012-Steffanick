@@ -45,9 +45,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.7.1] - 2016-04-27
 ### Added
+* [/js/]
 * [/widgets/]
 * [connect.html] (text widget)
-* [/js/]
 * [scroll-affix.js]
 * `.scroll-affix` ([style.css])
 
