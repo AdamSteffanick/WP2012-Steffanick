@@ -47,7 +47,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 * [/widgets/]
 * [connect.html] (text widget)
-* /js/
+* [/js/]
 * [scroll-affix.js]
 * `.scroll-affix` ([style.css])
 
@@ -230,7 +230,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [0.2.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/AdamSteffanick/wp2012-s/compare/c87ee07...v0.1.0
 [Initial commit]: https://github.com/AdamSteffanick/wp2012-s/commit/c87ee07783b4605ce4214ebd08372816cd3c41fa
-[/widgets/]: .[/widgets/]
+[/widgets/]: ./widgets/
 [/js/]: ./js/
 [404.php]: ./404.php
 [archives.php]: ./archives.php
