@@ -239,7 +239,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [header.php]: .[header.php]
 [footer.php]: ./footer.php
 [functions.php]: ./functions.php
-[LISENCE]: ./LISENCE
+[LISENCE]: https://github.com/AdamSteffanick/wp2012-s/blob/master/LICENSE
 [README.md]: ./README.md
 [scroll-affix.js]: ./scroll-affix.js
 [searchform.php]: ./searchform.php
