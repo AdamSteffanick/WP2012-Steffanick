@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+* byline `<time>` [schema.org] `dateCreated` → `datePublished` ([content.php])
+* [schema.org] `dateCreated` → byline `<meta>` ([content.php])
+
+### Fixed
+* [schema.org] `BlogPosting` errors
 
 ## [0.8.0] - 2017-03-02
 ### Added

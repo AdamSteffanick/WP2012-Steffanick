@@ -22,15 +22,11 @@
     endif; ?>
 
     <?php if ( is_single() ) : ?>
-    <h1 class="entry-title" itemprop="headline">
-      <?php the_title(); ?>
-    </h1>
+    <h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
     <?php else : ?>
     <h1 class="entry-title">
       <a href="<?php the_permalink(); ?>" rel="bookmark">
-        <span itemprop="headline">
-          <?php the_title(); ?>
-        </span>
+        <span itemprop="headline"><?php the_title(); ?></span>
       </a>
     </h1>
     <?php endif; // is_single() ?>
@@ -45,12 +41,11 @@
     <span class="byline" itemprop="author creator" itemid="<?php echo get_the_author_meta('url'); ?>" itemscope itemtype="http://schema.org/Person">
       By
       <a href="<?php echo get_the_author_meta('url'); ?>" title="Visit <?php echo get_the_author(); ?>’s website">
-        <span class="byline-author" data-byline-name="<?php echo get_the_author(); ?>" itemprop="name" data-twitter-handle="<?php echo get_the_author_meta('twitter'); ?>">
-          <?php echo get_the_author(); ?>
-        </span>
+        <span class="byline-author" data-byline-name="<?php echo get_the_author(); ?>" itemprop="name" data-twitter-handle="<?php echo get_the_author_meta('twitter'); ?>"><?php echo get_the_author(); ?></span>
       </a>
     </span>
-    <time class="dateline" datetime="<?php echo get_the_date('c'); ?>" itemprop="dateCreated" content="<?php echo get_the_date('c'); ?>"><?php echo get_the_date(); ?></time>
+    <time class="dateline" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop="datePublished" content="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date(); ?></time>
+    <meta itemprop="dateCreated" content="<?php echo get_the_date('c'); ?>" />
   </div><!-- .entry-byline-dateline -->
 
   <?php if ( is_search() ) : // Only display Excerpts for Search ?>
