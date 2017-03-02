@@ -5,12 +5,12 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://steffanick.com/
 Template: twentytwelve
-Version: 0.7.4
+Version: 0.8.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-/* =Twenty Twelve 2.0
+/* =Twenty Twelve 2.2
 --------------------------------------------------------------
 /* =Notes
 --------------------------------------------------------------
@@ -50,7 +50,7 @@ http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
 /* =Reset
 -------------------------------------------------------------- */
 
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -109,6 +109,7 @@ figcaption,
 figure,
 footer,
 header,
+hgroup,
 nav,
 section {
 	display: block;
@@ -609,6 +610,12 @@ a:hover {
 	display: inline-block;
 }
 
+/* Banner */
+section[role="banner"] {
+	margin-bottom: 48px;
+	margin-bottom: 3.428571429rem;
+}
+
 /* Sidebar */
 .widget-area .widget {
 	-webkit-hyphens: auto;
@@ -654,6 +661,30 @@ a:hover {
 .widget-area #s {
 	width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
 }
+
+/* Footer */
+footer[role="contentinfo"] {
+	border-top: 1px solid #ededed;
+	clear: both;
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 2;
+	max-width: 960px;
+	max-width: 68.571428571rem;
+	margin-top: 24px;
+	margin-top: 1.714285714rem;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 24px 0;
+	padding: 1.714285714rem 0;
+}
+footer[role="contentinfo"] a {
+	color: #686868;
+}
+footer[role="contentinfo"] a:hover {
+	color: #21759b;
+}
+
 
 /* =Main content and comment content
 -------------------------------------------------------------- */
@@ -2298,6 +2329,14 @@ img.gcsc-branding-img-noclear {
   -moz-hyphens: none;
   hyphens: none;
 }
+
+/* =Byline/Dateline
+-------------------------------------------------------------- */
+div .entry-byline-dateline {
+  margin-bottom: 21px;
+  margin-bottom: 1.5rem;
+}
+
 /* =Sitemap
 -------------------------------------------------------------- */
 .directory h2 {

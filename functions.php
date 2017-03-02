@@ -64,8 +64,8 @@ function theme_remove_open_sans() {
   wp_deregister_style('twentytwelve-fonts');
 }
 function theme_webfonts() {
-  /* register/enqueue Google WebFont Noto Sans via a CDN */
-  wp_enqueue_style('noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700,700italic:latin,latin-ext', '', null, all);
+  /* register/enqueue Google Fonts Noto Sans via a CDN */
+  wp_enqueue_style('noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&amp;subset=latin-ext', '', null, all);
   /* register/enqueue Font Awesome via a CDN with Bootstrap dependency */
   wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 'bootstrap', null, 'all');
 }
@@ -78,7 +78,7 @@ function theme_javascript() {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
     /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-2.2.4.min.js', '', null, false);
+    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-3.1.1.min.js', '', null, false);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
     /* remove wp-embed.min.js */

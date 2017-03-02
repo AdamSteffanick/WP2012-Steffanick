@@ -5,6 +5,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.8.0] - 2017-03-02
+### Added
+* `.entry-byline-dateline` ([style.css])
+* byline & dateline → blog entries ([content.php])
+* [content.php]
+* [schema.org] `BlogPosting` microdata → blog entries ([content.php])
+
+### Changed
+* display author information → single-author blogs ([content.php])
+* [Google Fonts] CSS URI ([functions.php])
+* [jQuery] → 3.1.1 ([functions.php])
+* [shields.io] version info → v0.8.0 ([README.md])
+* Tagline as `<small>` element → Site Title ([header.php])
+* [WordPress] Twenty Twelve → 2.2 ([style.css])
+
 ## [0.7.4] - 2017-02-27
 ### Added
 * [CHANGELOG.md]
@@ -38,13 +53,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.7.2] - 2016-04-28
 ### Added
+* `#site-title` & `#colophon` for HTML5 fixes ([style.css])
 * function `theme_add_style_property` ([functions.php])
 * [HTML5 Validator] link ([footer.php])
-* `#site-title` & `#colophon` for HTML5 fixes ([style.css])
 
 ### Changed
-* function `theme_google_webfonts` → `theme_webfonts` ([functions.php])
 * [Font Awesome] → footer ([functions.php])
+* function `theme_google_webfonts` → `theme_webfonts` ([functions.php])
 * HTML5 header elements ([scroll-affix.js])
 
 ### Fixed
@@ -52,11 +67,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.7.1] - 2016-04-27
 ### Added
+* `.scroll-affix` ([style.css])
 * [/js/]
 * [/widgets/]
 * [connect.html] (text widget)
 * [scroll-affix.js]
-* `.scroll-affix` ([style.css])
 
 ### Changed
 * [jQuery] → 2.2.3 ([functions.php])
@@ -102,7 +117,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.6.6] - 2016-04-21
 ### Changed
-* Yoast SEO schema.org search URL → use [Google Custom Search Engine] & Multisite network ([functions.php])
+* Yoast SEO [schema.org] search URL → use [Google Custom Search Engine] & Multisite network ([functions.php])
 
 ### Removed
 * RSD support ([functions.php])
@@ -122,7 +137,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 * [Bootstrap] 3.3.6 CSS CDN ([functions.php])
 * [Bootstrap] CSS → dependency of theme CSS ([functions.php])
-* enqueue Twenty Twelve _navigation.js_ ([functions.php])
+* enqueue [WordPress] Twenty Twelve _navigation.js_ ([functions.php])
 
 ### Changed
 * search button style ([style.css])
@@ -134,7 +149,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.6.2] - 2016-04-13
 ### Added
-- Twenty Twelve 2.0 ([style.css])
+* [WordPress] Twenty Twelve 2.0 ([style.css])
 
 ### Changed
 * [jQuery] → 1.12.3 ([functions.php])
@@ -198,15 +213,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.2.0] - 2015-07-25
 ### Added
 * [404.php]
-* [footer.php]
-* [functions.php]
-* [searchform.php]
 * copyright ([footer.php])
 * ease transitions → links & header ([style.css])
+* [footer.php]
+* [functions.php]
 * [Google Analytics] ([functions.php])
 * [Google API Key] ([functions.php])
 * [Google Custom Search Engine] ([searchform.php])
 * [Google Fonts] ([functions.php])
+* [searchform.php]
 * sticky footer ([style.css])
 * theme colours ([style.css])
 * theme layout ([style.css])
@@ -220,7 +235,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.4...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.4...v0.8.0
 [0.7.4]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.3...v0.7.4
 [0.7.3]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.2...v0.7.3
 [0.7.2]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.1...v0.7.2
@@ -248,6 +264,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [archives.php]: ./archives.php
 [CHANGELOG.md]: ./CHANGELOG.md
 [connect.html]: ./connect.html
+[content.php]: ./content.php
 [header.php]: ./header.php
 [footer.php]: ./footer.php
 [functions.php]: ./functions.php
@@ -268,5 +285,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Google Fonts]: https://fonts.google.com/
 [HTML5 Validator]: https://validator.w3.org/nu/
 [jQuery]: https://jquery.com/
+[schema.org]: https://schema.org/
 [shields.io]: http://shields.io/
 [WordPress]: https://wordpress.org/

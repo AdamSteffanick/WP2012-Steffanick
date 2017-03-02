@@ -42,8 +42,8 @@
         <div id="site-head">
           <span id="site-title">
             <a href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+            <small class="site-description"><?php bloginfo('description'); ?></small>
           </span>
-          <!--<h2 class="site-description"><?php bloginfo('description'); ?></h2>-->
         </div>
         <div id="nav-wrapper">
           <nav id="site-navigation" class="main-navigation">

@@ -1,4 +1,4 @@
-# WP2012-S [![version](https://img.shields.io/badge/wp2012--s-v0.7.4-0038e2.svg?style=flat-square)][CHANGELOG]
+# WP2012-S [![version](https://img.shields.io/badge/wp2012--s-v0.8.0-0038e2.svg?style=flat-square)][CHANGELOG]
 A WordPress child theme of Twenty Twelve built for https://steffanick.com/
 
 ## Download
@@ -10,6 +10,7 @@ A WordPress child theme of Twenty Twelve built for https://steffanick.com/
 * [Google Code Prettify] via CDN
 * [Google Custom Search Engine]
 * [Google Fonts] via CSS
+* [schema.org] microdata for blog entries
 
 [CHANGELOG]: ./CHANGELOG.md
 
@@ -18,3 +19,4 @@ A WordPress child theme of Twenty Twelve built for https://steffanick.com/
 [Google Code Prettify]: https://github.com/google/code-prettify
 [Google Custom Search Engine]: https://developers.google.com/custom-search/
 [Google Fonts]: https://fonts.google.com/
+[schema.org]: https://schema.org/
