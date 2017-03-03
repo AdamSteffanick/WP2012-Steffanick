@@ -28,7 +28,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * display author information → single-author blogs ([content.php])
 * [Google Fonts] CSS URI ([functions.php])
 * [jQuery] → 3.1.1 ([functions.php])
-* [shields.io] version info → v0.8.0 ([README.md])
 * Tagline as `<small>` element → Site Title ([header.php])
 * [WordPress] Twenty Twelve → 2.2 ([style.css])
 
