@@ -45,8 +45,22 @@
       </a>
     </span>
     <time class="dateline" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop="datePublished" content="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date(); ?></time>
-    <meta itemprop="dateCreated" content="<?php echo get_the_date('c'); ?>" />
+    <meta itemprop="dateCreated" content="<?php echo get_the_date('c'); ?>">
   </div><!-- .entry-byline-dateline -->
+
+  <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://www.steffanick.com/android-chrome-192x192.png">
+      <meta itemprop="width" content="192">
+      <meta itemprop="height" content="192">
+    </div>
+    <meta itemprop="name" content="Steffanick">
+  </div>
+  <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="url" content="https://www.steffanick.com/android-chrome-192x192.png">
+    <meta itemprop="width" content="192">
+    <meta itemprop="height" content="192">
+  </div>
 
   <?php if ( is_search() ) : // Only display Excerpts for Search ?>
   <div class="entry-summary">
@@ -63,7 +77,7 @@
   <footer class="entry-meta">
     <?php twentytwelve_entry_meta(); ?>
     <time class="dateline" datetime="<?php echo get_the_modified_date('c'); ?>" itemprop="dateModified" content="<?php echo get_the_modified_date('c'); ?>">Last updated <?php echo get_the_modified_date(); ?>.</time>
-    <?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>    
     <?php if ( is_singular() && get_the_author_meta( 'description' ) /*&& is_multi_author()*/ ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries. ?>
     <div class="author-info">
       <div class="author-avatar">
