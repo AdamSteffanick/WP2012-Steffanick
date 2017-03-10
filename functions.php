@@ -1,4 +1,40 @@
 <?php
+/* =Overwritten Functions
+-------------------------------------------------------------- */
+/* WP2012-S entry meta */
+function twentytwelve_entry_meta() {
+  // Translators: used between list items, there is a space after the comma.
+  $categories_list = get_the_category_list( __( ', ', 'twentytwelve' ) );
+
+  // Translators: used between list items, there is a space after the comma.
+  $tag_list = get_the_tag_list( '', __( ', ', 'twentytwelve' ) );
+
+  // Translators: 1 is category and 2 is tag.
+
+    if ( $tag_list ) {
+      $utility_text = __(
+        '<ul class="fa-ul">
+          <li><span class="fa-li fa fa-book" aria-hidden="true"></span><span>%1$s</span></li>
+          <li><span class="fa-li fa fa-hashtag" aria-hidden="true"></span><span>%2$s</span></li>
+        </ul>'
+      , 'twentytwelve');
+    } elseif ( $categories_list ) {
+      $utility_text = __(
+        '<ul class="fa-ul">
+          <li><span class="fa-li fa fa-book" aria-hidden="true"></span><span>%1$s</span></li>
+        </ul>'
+      , 'twentytwelve');
+    } else {
+      $utility_text = __('', 'twentytwelve');
+    }
+
+  printf(
+    $utility_text,
+    $categories_list,
+    $tag_list,
+    $permalink
+  );
+}
 /* =Custom Functions and Hacks
 -------------------------------------------------------------- */
 /* add copyright year [yyyy-yyyy] */
@@ -57,7 +93,7 @@ function theme_style() {
   /* remove style.css */
   wp_deregister_style('twentytwelve-style');
   /* register/enqueue style.css with Bootstrap dependency */
-  wp_enqueue_style('twentytwelve-style', network_home_url('/', 'https') . 'wordpress/wp-content/themes/wp2012-s/style.css', 'bootstrap', null, all);
+  wp_enqueue_style('twentytwelve-style', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/style.css', 'bootstrap', null, all);
 }
 /* remove the Open Sans font */
 function theme_remove_open_sans() {
@@ -89,7 +125,7 @@ function theme_javascript() {
   /* register/enqueue navigation.js with jQuery dependency before </body> */
   wp_enqueue_script('twentytwelve-navigation', network_home_url('/', 'https') . 'wordpress/wp-content/themes/twentytwelve/js/navigation.js', 'jquery-core', null, true);
   /* register/enqueue scroll-affix.js with jQuery dependency before </body> */
-  wp_enqueue_script('scroll-affix', network_home_url('/', 'https') . 'wordpress/wp-content/themes/wp2012-s/js/scroll-affix.js', 'jquery-core', null, true);
+  wp_enqueue_script('scroll-affix', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/scroll-affix.js', 'jquery-core', null, true);
   /* register/enqueue Google Code Prettify JavaScript via a CDN before </body> */
   wp_enqueue_script('google-code_prettify', 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', '', null, true);
 }

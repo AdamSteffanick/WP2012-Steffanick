@@ -1,4 +1,4 @@
-# WP2012-S [![version](https://img.shields.io/badge/wp2012--s-v0.8.1-0038e2.svg?style=flat-square)][CHANGELOG]
+# WP2012-S [![version](https://img.shields.io/badge/wp2012--s-v0.8.2-0038e2.svg?style=flat-square)][CHANGELOG]
 A WordPress child theme of Twenty Twelve built for https://steffanick.com/
 
 ## Download

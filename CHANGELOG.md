@@ -5,6 +5,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.8.2] - 2017-03-10
+### Added
+* author information → blog entries `<footer>` ([content.php])
+* [Font Awesome] icons → function `twentytwelve_entry_meta()` → ([functions.php])
+* function `twentytwelve_entry_meta()` → ([functions.php])
+* function `twentytwelve_entry_meta()` [microformats.org] author & time microdata → blog entries ([content.php])
+* “Proudly Powered By [WordPress]” → [Font Awesome] icon ([footer.php])
+* [schema.org] `copyrightHolder` & `copyrightYear` → blog entries ([content.php])
+
+### Changed
+* `footer.entry-meta` style ([style.css])
+* author information style ([style.css])
+* blog entries [schema.org] `dateModified` → `get_the_modified_date('c');` with relative timestamp ([content.php])
+* blog time zone → UTC
+* relative theme name → paths to theme files ([functions.php])
+
 ## [0.8.1] - 2017-03-03
 ### Added
 * [schema.org] `image` → blog entries ([content.php])
@@ -65,12 +81,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.7.2] - 2016-04-28
 ### Added
 * `#site-title` & `#colophon` for HTML5 fixes ([style.css])
-* function `theme_add_style_property` ([functions.php])
+* function `theme_add_style_property()` ([functions.php])
 * [HTML5 Validator] link ([footer.php])
 
 ### Changed
 * [Font Awesome] → footer ([functions.php])
-* function `theme_google_webfonts` → `theme_webfonts` ([functions.php])
+* function `theme_google_webfonts()` → `theme_webfonts` ([functions.php])
 * HTML5 header elements ([scroll-affix.js])
 
 ### Fixed
@@ -91,8 +107,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Removed
 * `.past-hgroup` ([style.css])
-* function `theme_scroll_changes` ([functions.php])
-
+* function `theme_scroll_changes()` ([functions.php])
 
 ### Fixed
 * scroll changes `$(document).on('ready', function() {` → `$(document).ready(function() {` ([scroll-affix.js])
@@ -224,7 +239,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.2.0] - 2015-07-25
 ### Added
 * [404.php]
-* copyright ([footer.php])
+* theme copyright ([footer.php])
 * ease transitions → links & header ([style.css])
 * [footer.php]
 * [functions.php]
@@ -237,6 +252,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * theme colours ([style.css])
 * theme layout ([style.css])
 
+### Removed
+* “Proudly Powered By [WordPress]” ([footer.php])
+
 ## [0.1.0] - 2015-07-19
 ### Added
 * [style.css]
@@ -246,7 +264,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.1...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.2...HEAD
+[0.8.2]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.1...v0.8.2
 [0.8.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.4...v0.8.0
 [0.7.4]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.3...v0.7.4
@@ -297,6 +316,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Google Fonts]: https://fonts.google.com/
 [HTML5 Validator]: https://validator.w3.org/nu/
 [jQuery]: https://jquery.com/
+[microformats.org]: http://microformats.org/
 [schema.org]: https://schema.org/
 [shields.io]: http://shields.io/
 [WordPress]: https://wordpress.org/

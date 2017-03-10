@@ -37,15 +37,29 @@
     <?php endif; // comments_open() ?>
   </header><!-- .entry-header -->
 
-  <div class="entry-byline-dateline">
-    <span class="byline" itemprop="author creator" itemid="<?php echo get_the_author_meta('url'); ?>" itemscope itemtype="http://schema.org/Person">
+  <div class="entry-byline-dateline entry-meta">
+    <span class="byline" itemprop="author creator copyrightHolder" itemid="<?php echo get_the_author_meta('url'); ?>" itemscope itemtype="http://schema.org/Person">
       By
-      <a href="<?php echo get_the_author_meta('url'); ?>" title="Visit <?php echo get_the_author(); ?>’s website">
-        <span class="byline-author" data-byline-name="<?php echo get_the_author(); ?>" itemprop="name" data-twitter-handle="<?php echo get_the_author_meta('twitter'); ?>"><?php echo get_the_author(); ?></span>
-      </a>
+      <span class="author vcard">
+        <a class="url fn n" href="<?php echo get_the_author_meta('url'); ?>" title="Visit <?php echo get_the_author(); ?>’s website">
+          <span class="byline-author" data-byline-name="<?php echo get_the_author(); ?>" itemprop="name" data-twitter-handle="<?php echo get_the_author_meta('twitter'); ?>">
+            <?php echo get_the_author(); ?>
+          </span>
+        </a>
+      </span>
     </span>
-    <time class="dateline" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop="datePublished" content="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date(); ?></time>
+    <meta itemprop="copyrightYear" content="<?php echo get_the_date('Y'); ?>">
     <meta itemprop="dateCreated" content="<?php echo get_the_date('c'); ?>">
+    <span class="dateline posted-on">
+      <time class="entry-date published" datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop="datePublished" content="<?php echo get_the_date('Y-m-d'); ?>">
+        <?php echo get_the_date(); ?>
+      </time>
+      (last updated
+      <time class="updated" datetime="<?php echo get_the_modified_date('c'); ?>" itemprop="dateModified" content="<?php echo get_the_modified_date('c'); ?>">
+        <?php echo human_time_diff(get_the_modified_time('U'), current_time('U')); ?>
+      </time>
+      ago)
+    </span>
   </div><!-- .entry-byline-dateline -->
 
   <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
@@ -76,9 +90,8 @@
 
   <footer class="entry-meta">
     <?php twentytwelve_entry_meta(); ?>
-    <time class="dateline" datetime="<?php echo get_the_modified_date('c'); ?>" itemprop="dateModified" content="<?php echo get_the_modified_date('c'); ?>">Last updated <?php echo get_the_modified_date(); ?>.</time>
-    <?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>    
-    <?php if ( is_singular() && get_the_author_meta( 'description' ) /*&& is_multi_author()*/ ) : // If a user has filled out their description and this is a multi-author blog, show a bio on their entries. ?>
+    <?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php if ( is_singular() && get_the_author_meta( 'description' ) ) : // If a user has filled out their description show a bio on their entries. ?>
     <div class="author-info">
       <div class="author-avatar">
         <?php
@@ -89,18 +102,13 @@
       </div><!-- .author-avatar -->
       <div class="author-description">
         <address>
-          <span itemprop="author creator" itemid="<?php echo get_the_author_meta('url'); ?>" itemscope itemtype="http://schema.org/Person">
+          <span>
             <a href="<?php echo get_the_author_meta('url'); ?>" title="Visit <?php echo get_the_author(); ?>’s website">
-              <span itemprop="name" data-twitter-handle="<?php echo get_the_author_meta('twitter'); ?>"><?php echo get_the_author(); ?></span>
+              <span><?php echo get_the_author(); ?></span>
             </a>
           </span>
         </address>
         <p><?php the_author_meta( 'description' ); ?></p>
-<!--        <div class="author-link">
-          <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-            <?php printf( __( 'View all posts by %s <span class="meta-nav">&rarr;</span>', 'twentytwelve' ), get_the_author() ); ?>
-          </a>
-        </div> .author-link -->
       </div><!-- .author-description -->
     </div><!-- .author-info -->
     <?php endif; ?>

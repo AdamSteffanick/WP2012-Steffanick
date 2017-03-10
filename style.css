@@ -5,7 +5,7 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://steffanick.com/
 Template: twentytwelve
-Version: 0.8.1
+Version: 0.8.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1930,6 +1930,14 @@ header {
 .entry-header .entry-title {
   font-family: "Noto Sans", Ariel, sans-serif;
 }
+.comments-link a,
+.entry-meta a {
+	color: rgb(0,56,226);
+}
+.comments-link a:hover,
+.entry-meta a:hover {
+	color: rgb(0,37,150);
+}
 .site-content article {
   border: 0;
 }
@@ -1946,7 +1954,11 @@ header {
 }
 .entry-content pre,
 .comment-content pre {
-	border: none;
+  border: none;
+}
+.entry-content a:visited,
+.comment-content a:visited {
+  color: rgb(0,56,226);
 }
 .entry-content code,
 .comment-content code {
@@ -1957,8 +1969,25 @@ header {
   font-size: 1rem;
   line-height: 1.714285714;
 }
+footer.entry-meta {
+  margin-top: 24px;
+  margin-top: 1.714285714rem;
+  font-size: 100%;
+  line-height: 1.714285714;
+  color: rgb(17,28,36);
+}
+.single-author .entry-meta .by-author {
+  display: inline;
+}
 /* =Repeatable patterns
 -------------------------------------------------------------- */
+/* Shared Post Format styling */
+article.format-quote footer.entry-meta,
+article.format-link footer.entry-meta,
+article.format-status footer.entry-meta {
+  font-size: 100%;
+  line-height: 1.714285714;
+}
 /* Form fields, general styles first */
 /* Buttons */
 .menu-toggle {
@@ -1992,6 +2021,43 @@ header {
   border: none;
   box-shadow: none;
 }
+/* Images */
+.entry-content img,
+.comment-content img,
+.widget img,
+img.header-image,
+.author-avatar img,
+img.wp-post-image {
+	/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
+	border-radius: 0;
+	box-shadow: none;
+}
+/* Author profiles */
+.author .archive-header {
+	margin-bottom: 24px;
+	margin-bottom: 1.714285714rem;
+}
+.author-info {
+	border-top: 1px solid rgb(0,37,150);
+	margin: 24px 0;
+	margin: 1.714285714rem 0;
+	padding-top: 24px;
+	padding-top: 1.714285714rem;
+	overflow: hidden;
+}
+.author-description p {
+  font-size: 100%;
+  line-height: 1.714285714;
+  color: rgb(17,28,36);
+}
+.author.archive .author-info {
+	border-top: 0;
+	margin: 0 0 48px;
+	margin: 0 0 3.428571429rem;
+}
+.author.archive .author-avatar {
+	margin-top: 0;
+}
 /* =Media queries
 -------------------------------------------------------------- */
 /* Fix Template Padding */
@@ -2005,6 +2071,10 @@ header {
 }
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
+	.author-avatar {
+		float: left;
+		margin-top: 0;
+	}
   /* Main Menu */
   #site-title a,
   .site-header h2 {
@@ -2366,4 +2436,9 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {
 -------------------------------------------------------------- */
 pre code {
   white-space: inherit;
+}
+/* =Hidden
+-------------------------------------------------------------- */
+.hidden {
+  display: none;
 }
