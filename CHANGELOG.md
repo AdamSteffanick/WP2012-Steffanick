@@ -21,6 +21,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * blog time zone → UTC
 * relative theme name → paths to theme files ([functions.php])
 
+### Fixed
+* blog entries [microformats.org] `updated` errors
+
 ## [0.8.1] - 2017-03-03
 ### Added
 * [schema.org] `image` → blog entries ([content.php])
