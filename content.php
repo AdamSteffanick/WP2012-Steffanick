@@ -91,18 +91,19 @@
   <footer class="entry-meta">
     <?php twentytwelve_entry_meta(); ?>
     <?php edit_post_link( __( 'Edit', 'twentytwelve' ), '<span class="edit-link">', '</span>' ); ?>
+    <hr />
     <?php if ( is_singular() && get_the_author_meta( 'description' ) ) : // If a user has filled out their description show a bio on their entries. ?>
-    <div class="author-info">
-      <div class="author-avatar">
+    <div class="author-info media">
+      <div class="author-avatar media-left">
         <?php
         /** This filter is documented in author.php */
-        $author_bio_avatar_size = apply_filters( 'twentytwelve_author_bio_avatar_size', 68 );
+        $author_bio_avatar_size = apply_filters( 'twentytwelve_author_bio_avatar_size', 64 );
         echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
         ?>
       </div><!-- .author-avatar -->
-      <div class="author-description">
+      <div class="author-description media-body">
         <address>
-          <span>
+          <span class="media-heading">
             <a href="<?php echo get_the_author_meta('url'); ?>" title="Visit <?php echo get_the_author(); ?>’s website">
               <span><?php echo get_the_author(); ?></span>
             </a>
@@ -111,6 +112,7 @@
         <p><?php the_author_meta( 'description' ); ?></p>
       </div><!-- .author-description -->
     </div><!-- .author-info -->
+    <hr />
     <?php endif; ?>
   </footer><!-- .entry-meta -->
 </article><!-- #post -->

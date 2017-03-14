@@ -5,7 +5,7 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://steffanick.com/
 Template: twentytwelve
-Version: 0.8.2
+Version: 0.8.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1779,6 +1779,11 @@ img#wpstats {
 --------------------------------------------------------------
 /* =Notes
 --------------------------------------------------------------
+This stylesheet uses rem values with a pixel fallback. The rem
+values (and line heights) are calculated using two variables:
+
+$rembase:     14;
+$line-height: 28;
 ---------- Colours
 * Base
 rgb(0,37,150)
@@ -1815,10 +1820,32 @@ a:visited,
 .comment-content a:visited {
   color: rgb(0,56,226);
 }
+dl, ol, ul {
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
+}
+hr {
+  background-color: rgb(17,28,36);
+  border: 0;
+  height: 1px;
+  margin: 0 0 14px;
+  margin: 0 0 1rem;
+}
 /* Page structure */
 .site {
   color: rgb(0,18,73);
   background-color: transparent;
+}
+.site-content,
+.widget-area {
+  margin: 14px 0 0;
+  margin: 1rem 0 0;
+}
+.site-content nav {
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  font-size: 1rem;
 }
 /* Header */
 .site-header {
@@ -1827,35 +1854,37 @@ a:visited,
 #site-title {
   display: block;
   text-align: center;
+  padding: 14px 0;
+  padding: 1rem 0;
 }
-  
-#site-title a,
-.site-header h2 a {
-  margin-bottom: 0;
-  font-size: 35px;
-  font-size: 2.5rem;
-  line-height: 1.36;
-  color: rgb(17,28,36);
-  font-family: "Noto Sans", Ariel, sans-serif;
+#site-title a {
+  font-weight: bold;
+}
+#site-title small {
+  display: block;
   font-weight: normal;
+  line-height: 2;
+}
+
+#site-title a {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 2;
+  color: rgb(0,18,73);
+  font-family: "Noto Sans", Ariel, sans-serif;
+  text-transform: uppercase;
   -webkit-transition: font-size 400ms ease;
   transition:         font-size 400ms ease;
 }
-#site-title a:hover,
-.site-header h2 a:hover {
+#site-title a:hover {
   color: rgb(0,37,150);
   text-decoration: none;
   -webkit-transition: color 400ms ease;
   transition: color 400ms ease;
 }
-.site-header h2 {
-  font-variant: small-caps;
-  font-size: 21px;
-  font-size: 1.5rem;
-}
 header {
-  margin-bottom: 48px;
-  margin-bottom: 3.428571429rem;
+  margin-bottom: 0;
 }
 
 /* Sidebar */
@@ -1864,8 +1893,8 @@ header {
   color: rgb(17,28,36);
 }
 .widget-area .widget {
-  margin-bottom: 21px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
   word-wrap: normal;
   -webkit-hyphens: none;
   -moz-hyphens: none;
@@ -1911,8 +1940,8 @@ header {
   text-align: right;
 }
 #colophon {
-  font-size: 10.5px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 1rem;
   color: rgb(17,28,36);
 }
 #colophon a {
@@ -1925,21 +1954,51 @@ header {
   -webkit-transition: color 400ms ease;
   transition: color 400ms ease;
 }
+#colophon small {
+  line-height: 2;
+}
 /* =Main content and comment content
 -------------------------------------------------------------- */
+.entry-header {
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
+}
+.entry-header img.wp-post-image {
+  margin-bottom: 24px;
+  margin-bottom: 1.714285714rem;
+}
 .entry-header .entry-title {
   font-family: "Noto Sans", Ariel, sans-serif;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 2;
+  font-weight: bold;
+  -webkit-transition: font-size 400ms ease;
+  transition:         font-size 400ms ease;
 }
+
+.entry-content p,
+.entry-summary p,
+.comment-content p,
+.mu_register p {
+  margin: 0 0 14px;
+  margin: 0 0 1rem;
+  line-height: 2;
+}
+
 .comments-link a,
 .entry-meta a {
-	color: rgb(0,56,226);
+  color: rgb(0,56,226);
 }
 .comments-link a:hover,
 .entry-meta a:hover {
-	color: rgb(0,37,150);
+  color: rgb(0,37,150);
 }
 .site-content article {
   border: 0;
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
 }
 /* Content */
 .entry-content ul.reference {
@@ -1970,23 +2029,54 @@ header {
   line-height: 1.714285714;
 }
 footer.entry-meta {
-  margin-top: 24px;
-  margin-top: 1.714285714rem;
-  font-size: 100%;
-  line-height: 1.714285714;
+  margin-top: 0;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 2;
   color: rgb(17,28,36);
 }
 .single-author .entry-meta .by-author {
   display: inline;
 }
+/* =Archives
+-------------------------------------------------------------- */
+
+.archive-header,
+.page-header {
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
+  padding-bottom: 0;
+  border-bottom: none;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 2;
+  font-weight: bold;
+}
 /* =Repeatable patterns
 -------------------------------------------------------------- */
+/* Small headers */
+.archive-title,
+.page-title,
+.widget-title {
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 2;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(17,28,36);
+  -webkit-transition: font-size 400ms ease;
+  transition:         font-size 400ms ease;
+}
+.archive-title,
+.page-title {
+  text-transform: none;
+}
 /* Shared Post Format styling */
 article.format-quote footer.entry-meta,
 article.format-link footer.entry-meta,
 article.format-status footer.entry-meta {
   font-size: 100%;
-  line-height: 1.714285714;
+  line-height: 2;
 }
 /* Form fields, general styles first */
 /* Buttons */
@@ -2026,37 +2116,49 @@ article.format-status footer.entry-meta {
 .comment-content img,
 .widget img,
 img.header-image,
-.author-avatar img,
 img.wp-post-image {
-	/* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
-	border-radius: 0;
-	box-shadow: none;
+  /* Add fancy borders to all WordPress-added images but not things like badges and icons and the like */
+  border-radius: 0;
+  box-shadow: none;
+}
+.author-avatar img {
+  margin-top: 7px;
+  margin-top: .5rem;
+  border-radius: 50%;
 }
 /* Author profiles */
 .author .archive-header {
-	margin-bottom: 24px;
-	margin-bottom: 1.714285714rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.714285714rem;
 }
 .author-info {
-	border-top: 1px solid rgb(0,37,150);
-	margin: 24px 0;
-	margin: 1.714285714rem 0;
-	padding-top: 24px;
-	padding-top: 1.714285714rem;
-	overflow: hidden;
+  border: none;
+  margin: 0 0 14px 0;
+  margin: 0 0 1rem 0;
+  padding-top: 0;
+  overflow: hidden;
+}
+.author-info address {
+  line-height: 2;
 }
 .author-description p {
-  font-size: 100%;
-  line-height: 1.714285714;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 2;
   color: rgb(17,28,36);
 }
 .author.archive .author-info {
-	border-top: 0;
-	margin: 0 0 48px;
-	margin: 0 0 3.428571429rem;
+  border-top: 0;
+  margin: 0 0 48px;
+  margin: 0 0 3.428571429rem;
 }
 .author.archive .author-avatar {
-	margin-top: 0;
+  margin-top: 0;
+}
+/* =Byline/Dateline
+-------------------------------------------------------------- */
+.dateline {
+  display: block;
 }
 /* =Media queries
 -------------------------------------------------------------- */
@@ -2071,23 +2173,19 @@ img.wp-post-image {
 }
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
-	.author-avatar {
-		float: left;
-		margin-top: 0;
-	}
+  .author-avatar {
+    float: none;
+    margin-top: 0;
+  }
+  .author-description {
+    float: none;
+    width: auto;
+  }
   /* Main Menu */
-  #site-title a,
-  .site-header h2 {
-    text-align: center;
-  }
   #site-title a {
-    background-color: rgb(255,255,255);
-    font-size: 46px;
-    font-size: 3.5rem;
-  }
-  .site-header h2 {
-    background-color: rgb(255,255,255);
-    font-size: 2.5rem;
+    text-align: center;
+    font-size: 17.5px;
+    font-size: 1.25rem;
   }
   .main-navigation ul.nav-menu,
   .main-navigation div.nav-menu > ul {
@@ -2136,6 +2234,19 @@ img.wp-post-image {
     font-weight: normal;
     -webkit-transition: color 400ms ease;
     transition: color 400ms ease;
+  }
+  /* =Main content and comment content
+  -------------------------------------------------------------- */
+  .entry-header .entry-title {
+    font-size: 17.5px;
+    font-size: 1.25rem;
+  }
+  /* =Repeatable patterns
+  -------------------------------------------------------------- */
+  /* Small headers */
+  .archive-title {
+    font-size: 17.5px;
+    font-size: 1.25rem;
   }
   /* Fix Template Padding */
   .main-navigation li {
@@ -2190,14 +2301,8 @@ img.wp-post-image {
     background-color: rgb(255,255,255);
   }
   #site-title a {
-    background-color: rgb(255,255,255);
-    font-size: 80px;
-    font-size: 5rem;
-  }
-  .site-header h2 {
-    background-color: rgb(255,255,255);
-    font-size: 48px;
-    font-size: 3rem;
+    font-size: 21px;
+    font-size: 1.5rem;
   }
   .main-navigation {
     background-color: rgb(255,255,255);
@@ -2207,7 +2312,7 @@ img.wp-post-image {
     border: none;
   }
   .main-navigation .current-menu-item {
-    background-color: rgb(255,255,255);
+    background-color: transparent;
   }
   .wrapper {
     background-color: rgb(255,255,255);
@@ -2233,6 +2338,19 @@ img.wp-post-image {
     -webkit-transition: color 400ms ease;
     transition: color 400ms ease;
   }
+  /* =Main content and comment content
+  -------------------------------------------------------------- */
+  .entry-header .entry-title {
+    font-size: 21px;
+    font-size: 1.5rem;
+  }
+  /* =Repeatable patterns
+  -------------------------------------------------------------- */
+  /* Small headers */
+  .archive-title {
+    font-size: 21px;
+    font-size: 1.5rem;
+  }
   /* 100% Width */
   /* Page structure */
   .site {
@@ -2245,7 +2363,7 @@ img.wp-post-image {
   }
   /* Header */
   #site-title a,
-  .site-header h2 {
+  #site-title small {
     margin: 0 auto;
     max-width: 960px;
     max-width: 68.571428571rem;
@@ -2262,6 +2380,11 @@ img.wp-post-image {
   }
   .site-info {
     margin: 0 auto;
+  }
+  /* =Byline/Dateline
+  -------------------------------------------------------------- */
+  .dateline {
+    display: inline;
   }
 }
 /* =Footer at bottom
@@ -2403,8 +2526,11 @@ img.gcsc-branding-img-noclear {
 /* =Byline/Dateline
 -------------------------------------------------------------- */
 div .entry-byline-dateline {
-  margin-bottom: 21px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 2;
 }
 
 /* =Sitemap
@@ -2436,6 +2562,15 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {
 -------------------------------------------------------------- */
 pre code {
   white-space: inherit;
+}
+/* =Font Awesome Hacks
+-------------------------------------------------------------- */
+/* Fix list icon positioning */
+footer.entry-meta li .fa {
+  line-height: 2;
+}
+footer.entry-meta .fa-li {
+  top: 0;
 }
 /* =Hidden
 -------------------------------------------------------------- */

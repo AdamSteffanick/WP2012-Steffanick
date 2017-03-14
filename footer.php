@@ -14,7 +14,7 @@
   <footer id="colophon">
     <div class="site-info">
       <?php do_action('twentytwelve_credits'); ?>
-      <p>
+      <small>
         ©<?php theme_copyright('2009') ?>
         <a href="https://www.steffanick.com/adam/" title="Visit Adam Steffanick’s website">Adam Steffanick</a>
         |
@@ -29,7 +29,7 @@
         <a href="https://wordpress.org/" aria-label="Proudly Powered By WordPress" title="Proudly Powered By WordPress">
           <span class="fa fa-wordpress" aria-hidden="true"></span>
         </a>
-      </p>
+      </small>
     </div><!-- .site-info -->
   </footer><!-- #colophon -->
 </div><!-- #page -->

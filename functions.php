@@ -14,14 +14,14 @@ function twentytwelve_entry_meta() {
     if ( $tag_list ) {
       $utility_text = __(
         '<ul class="fa-ul">
-          <li><span class="fa-li fa fa-book" aria-hidden="true"></span><span>%1$s</span></li>
+          <li><span class="fa-li fa fa-folder-open" aria-hidden="true"></span><span>%1$s</span></li>
           <li><span class="fa-li fa fa-hashtag" aria-hidden="true"></span><span>%2$s</span></li>
         </ul>'
       , 'twentytwelve');
     } elseif ( $categories_list ) {
       $utility_text = __(
         '<ul class="fa-ul">
-          <li><span class="fa-li fa fa-book" aria-hidden="true"></span><span>%1$s</span></li>
+          <li><span class="fa-li fa fa-folder-open" aria-hidden="true"></span><span>%1$s</span></li>
         </ul>'
       , 'twentytwelve');
     } else {
@@ -105,6 +105,11 @@ function theme_webfonts() {
   /* register/enqueue Font Awesome via a CDN with Bootstrap dependency */
   wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 'bootstrap', null, 'all');
 }
+/* add classes to Gravatar */
+function theme_add_gravatar_class($class) {
+  $class = str_replace("class='avatar", "class='avatar media-object", $class);
+  return $class;
+}
 /* =JavaScript Functions
 -------------------------------------------------------------- */
 /* load jquery.min.js (CDN), bootstrap.min.js (CDN), navigation.js, scroll-affix.js and run_prettify.js (CDN); remove jQuery Migrate */
@@ -143,6 +148,7 @@ add_filter('the_content', 'theme_code_esc_html');
 add_filter('wpseo_json_ld_search_url', 'theme_change_json_ld_search_url');
 add_filter('style_loader_tag' , 'theme_remove_style_id');
 add_filter('style_loader_tag' , 'theme_add_style_property');
+add_filter('get_avatar' , 'theme_add_gravatar_class');
 
 add_action('wp_enqueue_scripts', 'theme_style');
 add_action('wp_enqueue_scripts', 'theme_remove_open_sans', 11);

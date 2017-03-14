@@ -5,11 +5,30 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.8.3] - 2017-03-14
+### Added
+* `.entry-header .entry-title` transition ([style.css])
+* function `function theme_add_gravatar_class()` ([functions.php])
+
+### Changed
+* `.author-avatar img` → circular ([style.css])
+* `.entry-header .entry-title`, `.archive-title`, `.page-title, & `.widget-title` style ([style.css])
+* blog entries author information → [Bootstrap] media object ([content.php])
+* [Font Awesome] category icon → function `twentytwelve_entry_meta()` ([functions.php])
+* tagline → conditional ([header.php])
+* theme footer `<p>` → `<small>` ([footer.php])
+* theme header style ([style.css])
+* theme `line-height` → `2` ([style.css])
+* theme margins → `1rem` below elements ([style.css])
+
+### Fixed
+* [Font Awesome] list icon positioning ([style.css])
+
 ## [0.8.2] - 2017-03-10
 ### Added
 * author information → blog entries `<footer>` ([content.php])
-* [Font Awesome] icons → function `twentytwelve_entry_meta()` → ([functions.php])
-* function `twentytwelve_entry_meta()` → ([functions.php])
+* [Font Awesome] icons → function `twentytwelve_entry_meta()` ([functions.php])
+* function `twentytwelve_entry_meta()` ([functions.php])
 * function `twentytwelve_entry_meta()` [microformats.org] author & time microdata → blog entries ([content.php])
 * “Proudly Powered By [WordPress]” → [Font Awesome] icon ([footer.php])
 * [schema.org] `copyrightHolder` & `copyrightYear` → blog entries ([content.php])
@@ -47,7 +66,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * display author information → single-author blogs ([content.php])
 * [Google Fonts] CSS URI ([functions.php])
 * [jQuery] → 3.1.1 ([functions.php])
-* Tagline as `<small>` element → Site Title ([header.php])
+* tagline as `<small>` element → Site Title ([header.php])
 * [WordPress] Twenty Twelve → 2.2 ([style.css])
 
 ## [0.7.4] - 2017-02-27
@@ -267,7 +286,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.2...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.3...HEAD
+[0.8.3]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.2...v0.8.3
 [0.8.2]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.1...v0.8.2
 [0.8.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.0...v0.8.1
 [0.8.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.7.4...v0.8.0
@@ -304,7 +324,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [functions.php]: ./functions.php
 [LISENCE]: https://github.com/AdamSteffanick/wp2012-s/blob/master/LICENSE
 [README.md]: ./README.md
-[scroll-affix.js]: ./scroll-affix.js
+[scroll-affix.js]: ./js/scroll-affix.js
 [searchform.php]: ./searchform.php
 [style.css]: ./style.css
 
