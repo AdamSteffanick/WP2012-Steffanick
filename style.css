@@ -5,7 +5,7 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://steffanick.com/
 Template: twentytwelve
-Version: 0.8.3
+Version: 0.8.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1825,7 +1825,7 @@ dl, ol, ul {
   margin-bottom: 1rem;
 }
 hr {
-  background-color: rgb(17,28,36);
+  background-color: rgb(221,221,221);
   border: 0;
   height: 1px;
   margin: 0 0 14px;
@@ -1833,7 +1833,7 @@ hr {
 }
 /* Page structure */
 .site {
-  color: rgb(0,18,73);
+  color: rgb(17,28,36);
   background-color: transparent;
 }
 .site-content,
@@ -1886,7 +1886,6 @@ hr {
 header {
   margin-bottom: 0;
 }
-
 /* Sidebar */
 .widget-area {
   text-align: right;
@@ -1960,12 +1959,11 @@ header {
 /* =Main content and comment content
 -------------------------------------------------------------- */
 .entry-header {
-  margin-bottom: 14px;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 .entry-header img.wp-post-image {
-  margin-bottom: 24px;
-  margin-bottom: 1.714285714rem;
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
 }
 .entry-header .entry-title {
   font-family: "Noto Sans", Ariel, sans-serif;
@@ -1973,10 +1971,65 @@ header {
   font-size: 1rem;
   line-height: 2;
   font-weight: bold;
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
   -webkit-transition: font-size 400ms ease;
   transition:         font-size 400ms ease;
 }
-
+.entry-content h1,
+.comment-content h1,
+.entry-content h2,
+.comment-content h2,
+.entry-content h3,
+.comment-content h3,
+.entry-content h4,
+.comment-content h4,
+.entry-content h5,
+.comment-content h5,
+.entry-content h6,
+.comment-content h6 {
+	margin: 0 0 14px 0;
+	margin: 0 0 1rem 0;
+  font-size: 14px;
+  font-size: 1rem;
+  line-height: 2;
+  -webkit-transition: font-size 400ms ease;
+  transition:         font-size 400ms ease;
+}
+.entry-content h1,
+.comment-content h1 {
+  font-weight: bold;
+  text-align: center;
+}
+.entry-content h2,
+.comment-content h2,
+.mu_register h2 {
+  font-weight: bold;
+}
+.entry-content h3,
+.comment-content h3 {
+  font-weight: bold;
+  font-style: italic;
+}
+.entry-content h4,
+.comment-content h4 {
+  padding-left: 24px;
+  padding-left: 1.714285714rem;
+  font-weight: bold;
+  font-style: italic;
+}
+.entry-content h5,
+.comment-content h5 {
+  padding-left: 24px;
+  padding-left: 1.714285714rem;
+  font-style: italic;
+}
+.entry-content h6,
+.comment-content h6 {
+  padding-left: 24px;
+  padding-left: 1.714285714rem;
+  font-style: italic;
+}
 .entry-content p,
 .entry-summary p,
 .comment-content p,
@@ -1985,7 +2038,15 @@ header {
   margin: 0 0 1rem;
   line-height: 2;
 }
-
+.entry-content ol,
+.comment-content ol,
+.entry-content ul,
+.comment-content ul,
+.mu_register ul {
+	margin: 0 0 14px;
+	margin: 0 0 1rem;
+	line-height: 2;
+}
 .comments-link a,
 .entry-meta a {
   color: rgb(0,56,226);
@@ -2013,7 +2074,17 @@ header {
 }
 .entry-content pre,
 .comment-content pre {
-  border: none;
+	border: none;
+	color: #666;
+	font-family: Consolas, Monaco, Lucida Console, monospace;
+	font-size: 14px;
+	font-size: 1rem;
+	line-height: 2;
+	margin: 0 0 14px;
+	margin: 0 0 1rem;
+	overflow: auto;
+	padding: 24px;
+	padding: 1.714285714rem;
 }
 .entry-content a:visited,
 .comment-content a:visited {
@@ -2026,7 +2097,7 @@ header {
   font-family: Consolas, Monaco, Lucida Console, monospace;
   font-size: 14px;
   font-size: 1rem;
-  line-height: 1.714285714;
+  line-height: 2;
 }
 footer.entry-meta {
   margin-top: 0;
@@ -2562,6 +2633,21 @@ li.L1,li.L3,li.L5,li.L7,li.L9 {
 -------------------------------------------------------------- */
 pre code {
   white-space: inherit;
+}
+/* =Bootstrap Hacks
+-------------------------------------------------------------- */
+.panel {
+  margin-bottom: 14px;
+  margin-bottom: 1rem;
+  background-color: rgb(255,255,255);
+  border: 1px solid rgb(221,221,221);
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.panel-body {
+  padding: 14px;
+  padding: 1rem;
 }
 /* =Font Awesome Hacks
 -------------------------------------------------------------- */

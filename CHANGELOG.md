@@ -5,6 +5,26 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.8.4] - 2017-03-25
+### Added
+* blog archives recent entries ([archives.php])
+* blog entry featured image → link to blog entry ([content.php])
+* blog entry title → blog entry featured image `alt` & `title` attributes ([content.php])
+* [schema.org] `image` microdata → blog entry featured image ([content.php])
+* `the_post_thumbnail()` [mod_pagespeed] optimization → blog entry featured image ([content.php])
+
+### Changed
+* blog archives lists → [Bootstrap] panels ([archives.php])
+* blog archives tag cloud → tag list ([archives.php])
+* blog entries → [Bootstrap] panels ([content.php])
+* blog entry featured image → below `.entry-header` ([content.php])
+* blog entry featured image → conditional ([content.php])
+* byline & dateline → `<small>` ([content.php])
+* theme `line-height` & margins → lists, headers, & `<pre>` ([style.css])
+
+### Removed
+* [WordPress] responsive images ([functions.php])
+
 ## [0.8.3] - 2017-03-14
 ### Added
 * `.entry-header .entry-title` transition ([style.css])
@@ -31,17 +51,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * function `twentytwelve_entry_meta()` ([functions.php])
 * function `twentytwelve_entry_meta()` [microformats.org] author & time microdata → blog entries ([content.php])
 * “Proudly Powered By [WordPress]” → [Font Awesome] icon ([footer.php])
-* [schema.org] `copyrightHolder` & `copyrightYear` → blog entries ([content.php])
+* [schema.org] `copyrightHolder` & `copyrightYear` microdata → blog entries ([content.php])
 
 ### Changed
 * `footer.entry-meta` style ([style.css])
 * author information style ([style.css])
-* blog entries [schema.org] `dateModified` → `get_the_modified_date('c');` with relative timestamp ([content.php])
+* blog entries [schema.org] `dateModified` microdata → `get_the_modified_date('c');` with relative timestamp ([content.php])
 * blog time zone → UTC
 * relative theme name → paths to theme files ([functions.php])
 
 ### Fixed
-* blog entries [microformats.org] `updated` errors
+* blog entries [microformats.org] `updated` microdata errors
 
 ## [0.8.1] - 2017-03-03
 ### Added
@@ -49,11 +69,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [schema.org] `publisher` → blog entries ([content.php])
 
 ### Changed
-* blog entries byline `<time>` [schema.org] `dateCreated` → `datePublished` ([content.php])
+* blog entries byline `<time>` [schema.org] `dateCreated` microdata → `datePublished` ([content.php])
 * [schema.org] `dateCreated` → blog entries byline `<meta>` ([content.php])
 
 ### Fixed
-* [schema.org] `BlogPosting` errors
+* [schema.org] `BlogPosting` microdata errors
 
 ## [0.8.0] - 2017-03-02
 ### Added
@@ -286,7 +306,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.3...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.4...HEAD
+[0.8.4]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.3...v0.8.4
 [0.8.3]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.2...v0.8.3
 [0.8.2]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.1...v0.8.2
 [0.8.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.0...v0.8.1
@@ -340,6 +361,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [HTML5 Validator]: https://validator.w3.org/nu/
 [jQuery]: https://jquery.com/
 [microformats.org]: http://microformats.org/
+[mod_pagespeed]: https://www.modpagespeed.com/
 [schema.org]: https://schema.org/
 [shields.io]: http://shields.io/
 [WordPress]: https://wordpress.org/

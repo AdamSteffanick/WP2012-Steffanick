@@ -149,6 +149,7 @@ add_filter('wpseo_json_ld_search_url', 'theme_change_json_ld_search_url');
 add_filter('style_loader_tag' , 'theme_remove_style_id');
 add_filter('style_loader_tag' , 'theme_add_style_property');
 add_filter('get_avatar' , 'theme_add_gravatar_class');
+add_filter('wp_calculate_image_srcset_meta', '__return_null'); //http://wordpress.stackexchange.com/questions/211375/how-do-i-disable-responsive-images-in-wp-4-4
 
 add_action('wp_enqueue_scripts', 'theme_style');
 add_action('wp_enqueue_scripts', 'theme_remove_open_sans', 11);
