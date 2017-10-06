@@ -5,6 +5,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.9.0] - 2017-10-06
+### Added
+* `.ipa` style ([style.css])
+* function `theme_remove_emoji()` ([functions.php])
+* [Google Fonts] Noto Serif → [webfonts.js]
+* [International Phonetic Alphabet] symbols support ([functions.php], [style.css], & [webfonts.js])
+* [Web Font Loader] 1.6.26 JavaScript CDN ([functions.php])
+* [webfonts.js]
+
+### Changed
+* [jQuery] → 3.2.1 ([functions.php])
+* [WordPress] Twenty Twelve → 2.3 ([style.css])
+
+### Fixed
+* [WordPress] function `wpautop()` closing `<p>` elements ([functions.php])
+
+### Removed
+* [WordPress] emoji features ([functions.php])
+
 ## [0.8.4] - 2017-03-25
 ### Added
 * blog archives recent entries ([archives.php])
@@ -28,11 +47,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.8.3] - 2017-03-14
 ### Added
 * `.entry-header .entry-title` transition ([style.css])
-* function `function theme_add_gravatar_class()` ([functions.php])
+* function `theme_add_gravatar_class()` ([functions.php])
 
 ### Changed
 * `.author-avatar img` → circular ([style.css])
-* `.entry-header .entry-title`, `.archive-title`, `.page-title, & `.widget-title` style ([style.css])
+* `.entry-header .entry-title`, `.archive-title`, `.page-title`, & `.widget-title` style ([style.css])
 * blog entries author information → [Bootstrap] media object ([content.php])
 * [Font Awesome] category icon → function `twentytwelve_entry_meta()` ([functions.php])
 * tagline → conditional ([header.php])
@@ -306,7 +325,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.4...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.4...v0.9.0
 [0.8.4]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.3...v0.8.4
 [0.8.3]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.2...v0.8.3
 [0.8.2]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.1...v0.8.2
@@ -348,6 +368,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [scroll-affix.js]: ./js/scroll-affix.js
 [searchform.php]: ./searchform.php
 [style.css]: ./style.css
+[webfonts.js]: ./js/webfonts.js
 
 [Bootstrap]: http://getbootstrap.com/
 [browser-update.org]: http://browser-update.org/
@@ -359,9 +380,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Google Custom Search Engine]: https://developers.google.com/custom-search/
 [Google Fonts]: https://fonts.google.com/
 [HTML5 Validator]: https://validator.w3.org/nu/
+[International Phonetic Alphabet]: https://www.internationalphoneticassociation.org/content/ipa-chart
 [jQuery]: https://jquery.com/
 [microformats.org]: http://microformats.org/
 [mod_pagespeed]: https://www.modpagespeed.com/
 [schema.org]: https://schema.org/
 [shields.io]: http://shields.io/
+[Web Font Loader]: https://github.com/typekit/webfontloader
 [WordPress]: https://wordpress.org/

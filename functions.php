@@ -71,6 +71,21 @@ function theme_cleaner() {
   /* remove WordPress shortlink support */
   remove_action('wp_head', 'wp_shortlink_wp_head');
 }
+/* remove WordPress emoji features */ //https://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
+function theme_remove_emoji() {
+  /* all actions related to emojis */
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+  /* remove TinyMCE emoji */
+  add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+  /* remove eomji DNS prefetch */
+  add_filter( 'emoji_svg_url', '__return_false' );
+}
 /* remove support for older versions of Internet Explorer */
 function theme_remove_old_ie_support() {
   /* remove ie.css */
@@ -101,7 +116,7 @@ function theme_remove_open_sans() {
 }
 function theme_webfonts() {
   /* register/enqueue Google Fonts Noto Sans via a CDN */
-  wp_enqueue_style('noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i&amp;subset=latin-ext', '', null, all);
+  wp_enqueue_style('noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i', '', null, all);
   /* register/enqueue Font Awesome via a CDN with Bootstrap dependency */
   wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 'bootstrap', null, 'all');
 }
@@ -119,7 +134,7 @@ function theme_javascript() {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
     /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-3.1.1.min.js', '', null, false);
+    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-3.2.1.min.js', '', null, false);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
     /* remove wp-embed.min.js */
@@ -133,18 +148,22 @@ function theme_javascript() {
   wp_enqueue_script('scroll-affix', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/scroll-affix.js', 'jquery-core', null, true);
   /* register/enqueue Google Code Prettify JavaScript via a CDN before </body> */
   wp_enqueue_script('google-code_prettify', 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', '', null, true);
+  /* register/enqueue Web Font Loader JavaScript via a CDN before </body> */
+  wp_enqueue_script('webfontloader', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', '', null, true);
+  /* register/enqueue webfonts.js with Web Font Loader dependency before </body> */
+  wp_enqueue_script('webfonts', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/webfonts.js', 'webfontloader', null, true);
 }
-
 /* include Google Analytics */
 function theme_google_analytics() {
   include_once($_SERVER["DOCUMENT_ROOT"]."/static/analyticstracking.php");
 }
-
 /* =Filters and Actions
 -------------------------------------------------------------- */
 /* NOTE: default priority = 10 */
 
-add_filter('the_content', 'theme_code_esc_html');
+remove_filter('the_content', 'wpautop');
+remove_filter('the_excerpt', 'wpautop');
+add_filter('the_content', 'theme_code_esc_html', 1);
 add_filter('wpseo_json_ld_search_url', 'theme_change_json_ld_search_url');
 add_filter('style_loader_tag' , 'theme_remove_style_id');
 add_filter('style_loader_tag' , 'theme_add_style_property');
@@ -156,8 +175,7 @@ add_action('wp_enqueue_scripts', 'theme_remove_open_sans', 11);
 add_action('wp_enqueue_scripts', 'theme_remove_old_ie_support', 11);
 add_action('wp_enqueue_scripts', 'theme_javascript');
 
-remove_action('wp_head', 'print_emoji_detection_script', 7);
-add_action('wp_footer', 'print_emoji_detection_script');
+add_action( 'init', 'theme_remove_emoji' );
 
 add_action('after_setup_theme' , 'theme_cleaner');
 

@@ -5,12 +5,12 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://steffanick.com/
 Template: twentytwelve
-Version: 0.8.4
+Version: 0.9.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-/* =Twenty Twelve 2.2
+/* =Twenty Twelve 2.3
 --------------------------------------------------------------
 /* =Notes
 --------------------------------------------------------------
@@ -640,10 +640,18 @@ section[role="banner"] {
 	margin-bottom: 24px;
 	margin-bottom: 1.714285714rem;
 }
-.widget-area .textwidget ul {
+.widget-area .textwidget ul,
+.widget-area .textwidget ol {
 	list-style: disc outside;
 	margin: 0 0 24px;
 	margin: 0 0 1.714285714rem;
+}
+.widget-area .textwidget li > ul,
+.widget-area .textwidget li > ol {
+	margin-bottom: 0;
+}
+.widget-area .textwidget ol {
+	list-style: decimal;
 }
 .widget-area .textwidget li {
 	margin-left: 36px;
@@ -1441,7 +1449,6 @@ a.comment-edit-link:hover {
 	text-align: right;
 }
 
-
 /* =Plugins
 ----------------------------------------------- */
 
@@ -1796,11 +1803,11 @@ rgb(17,28,36)
 -------------------------------------------------------------- */
 /* Body, links, basics */
 body {
-  font-family: Ariel, sans-serif;
+  font-family: sans-serif;
   color: rgb(17,28,36);
 }
 body.custom-font-enabled {
-  font-family: "Noto Sans", Ariel, sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 a {
   text-decoration: none;
@@ -1872,7 +1879,7 @@ hr {
   font-size: 1rem;
   line-height: 2;
   color: rgb(0,18,73);
-  font-family: "Noto Sans", Ariel, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   text-transform: uppercase;
   -webkit-transition: font-size 400ms ease;
   transition:         font-size 400ms ease;
@@ -1966,7 +1973,7 @@ header {
   margin-bottom: 1rem;
 }
 .entry-header .entry-title {
-  font-family: "Noto Sans", Ariel, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 14px;
   font-size: 1rem;
   line-height: 2;
@@ -2649,6 +2656,10 @@ pre code {
   padding: 14px;
   padding: 1rem;
 }
+.list-unstyled {
+  padding-left: 0;
+  list-style: none !important;
+}
 /* =Font Awesome Hacks
 -------------------------------------------------------------- */
 /* Fix list icon positioning */
@@ -2662,4 +2673,37 @@ footer.entry-meta .fa-li {
 -------------------------------------------------------------- */
 .hidden {
   display: none;
+}
+/* =IPA Symbols
+-------------------------------------------------------------- */
+.ipa {
+  font-family: "Noto Serif", "Noto Sans Symbols", "Times New Roman" !important;
+  font-weight: 400 !important;
+}
+/* =Cheatsheets
+-------------------------------------------------------------- */
+.cheatsheet dl {
+  margin: 0;
+}
+.cheatsheet dl dl {
+  margin: 0 0 0 1rem;
+}
+.cheatsheet dt.ipa {
+  font-size: 28px;
+  font-size: 2rem;
+  min-width: 64px;
+  min-width: 4.571428571428571rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .cheatsheet .dl-horizontal dt {
+    width: auto;
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+}
+.cheatsheet .dl-horizontal dd {
+  margin: 0 0 1rem;
 }
