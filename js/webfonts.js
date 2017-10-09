@@ -1,9 +1,6 @@
 WebFont.load({
-  google: {
-    families: ['Noto Serif'],
-    testStrings: {
-      'Noto Serif': '\u2197\u2198'
-    }
+  custom: {
+    families: ["Noto Mono", "Noto Serif", "Noto Sans Symbols", "Geneva"]
   },
   loading: function () {
     console.log("loading");

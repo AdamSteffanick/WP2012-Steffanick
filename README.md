@@ -18,7 +18,7 @@ A [WordPress] child theme of Twenty Twelve built for https://steffanick.com/
 * [Web Font Loader] JS via CDN
 
 [CHANGELOG]: ./CHANGELOG.md
-[version-badge]: https://img.shields.io/badge/wp2012--s-v0.9.0-0038e2.svg?style=flat-square
+[version-badge]: https://img.shields.io/badge/wp2012--s-v0.9.1-0038e2.svg?style=flat-square
 
 [LICENSE]: ./LICENSE
 [license-badge]: https://img.shields.io/badge/license-GPL--2.0-0038e2.svg?style=flat-square

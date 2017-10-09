@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.9.1] - 2017-10-09
+### Added
+* `@font-face` rules for Geneva, Noto Mono, Noto Sans Symbols, & Noto Serif → [style.css]
+* Geneva → [webfonts.js]
+* Noto Mono → [webfonts.js]
+* Noto Sans Symbols → [webfonts.js]
+
+### Changed
+* [Google Fonts] Noto Serif → Noto Serif [webfonts.js]
+
 ## [0.9.0] - 2017-10-06
 ### Added
 * `.ipa` style ([style.css])
@@ -325,7 +335,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.1...HEAD
+[0.9.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.4...v0.9.0
 [0.8.4]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.3...v0.8.4
 [0.8.3]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.2...v0.8.3
