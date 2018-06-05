@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.10.0] - 2018-06-05
+### Changed
+* [Bootstrap] CSS URI ([functions.php])
+* [Bootstrap] JS URI ([functions.php])
+* [Font Awesome] CSS URI ([functions.php])
+* function `theme_remove_xmlrpc()` ([functions.php])
+* [jQuery] → 3.3.1 ([functions.php])
+* [WordPress] Twenty Twelve → 2.5 ([style.css])
+
+### Removed
+* [WordPress] XMLRPC support ([functions.php])
+
 ## [0.9.1] - 2017-10-09
 ### Added
 * `@font-face` rules for Geneva, Noto Mono, Noto Sans Symbols, & Noto Serif → [style.css]
@@ -335,7 +347,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.1...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.1...v0.10.0
 [0.9.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.4...v0.9.0
 [0.8.4]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.3...v0.8.4

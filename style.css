@@ -5,12 +5,12 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://steffanick.com/
 Template: twentytwelve
-Version: 0.9.1
+Version: 0.10.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
-/* =Twenty Twelve 2.3
+/* =Twenty Twelve 2.5
 --------------------------------------------------------------
 /* =Notes
 --------------------------------------------------------------
@@ -692,6 +692,12 @@ footer[role="contentinfo"] a {
 footer[role="contentinfo"] a:hover {
 	color: #21759b;
 }
+.site-info span[role=separator] {
+	padding: 0 0.3em 0 0.6em;
+}
+.site-info span[role=separator]::before {
+	content: '\002f';
+}
 
 
 /* =Main content and comment content
@@ -1352,6 +1358,12 @@ a.comment-edit-link:hover {
 	line-height: 2;
 	color: #5e5e5e;
 }
+#respond #wp-comment-cookies-consent {
+	margin: 0 10px 0 0;
+}
+#respond .comment-form-cookies-consent label {
+	display: inline;
+}
 .required {
 	color: red;
 }
@@ -1447,6 +1459,32 @@ a.comment-edit-link:hover {
 .widget_twitter .timesince {
 	display: block;
 	text-align: right;
+}
+.tagcloud ul {
+	list-style-type: none;
+}
+
+.tagcloud ul li {
+	display: inline-block;
+}
+
+.widget-area .widget.widget_tag_cloud li {
+	line-height: 1;
+}
+.template-front-page .widget-area .widget.widget_tag_cloud li {
+	margin: 0;
+}
+
+.widget-area .gallery-columns-2.gallery-size-full .gallery-icon img,
+.widget-area .gallery-columns-3.gallery-size-full .gallery-icon img,
+.widget-area .gallery-columns-4.gallery-size-full .gallery-icon img,
+.widget-area .gallery-columns-5.gallery-size-full .gallery-icon img,
+.widget-area .gallery-columns-6 .gallery-icon img,
+.widget-area .gallery-columns-7 .gallery-icon img,
+.widget-area .gallery-columns-8 .gallery-icon img,
+.widget-area .gallery-columns-9 .gallery-icon img {
+	height: auto;
+	max-width: 80%;
 }
 
 /* =Plugins

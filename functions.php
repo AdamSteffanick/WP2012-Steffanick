@@ -41,7 +41,7 @@ function twentytwelve_entry_meta() {
 function theme_copyright($year = 'auto') {
   if(intval($year) == 'auto'){ $year = date('Y'); }
   if(intval($year) == date('Y')){ echo intval($year); }
-  if(intval($year) < date('Y')){ echo intval($year) . '&#8211;' . date('Y'); }
+  if(intval($year) < date('Y')){ echo intval($year) . '–' . date('Y'); }
   if(intval($year) > date('Y')){ echo date('Y'); }
 }
 /* escape HTML entities in <code> tags */
@@ -70,6 +70,58 @@ function theme_cleaner() {
   remove_action('wp_head', 'rsd_link');
   /* remove WordPress shortlink support */
   remove_action('wp_head', 'wp_shortlink_wp_head');
+}
+/* remove WordPress XMLRPC support */ //https://github.com/Wordpress-Development/bye-bye-pingback/blob/master/bye-bye-pingback.php
+function theme_remove_xmlrpc() {
+  /* Remove pingback from head (link rel="pingback") */
+  if (!is_admin()) {
+    function link_rel_buffer_callback($buffer) {
+      $buffer = preg_replace('/(<link.*?rel=("|\')pingback("|\').*?href=("|\')(.*?)("|\')(.*?)?\/?>|<link.*?href=("|\')(.*?)("|\').*?rel=("|\')pingback("|\')(.*?)?\/?>)/i', '', $buffer);
+      return $buffer;
+    }
+    function link_rel_buffer_start() {
+      ob_start("link_rel_buffer_callback");
+    }
+    function link_rel_buffer_end() {
+      ob_flush();
+    }
+    add_action('template_redirect', 'link_rel_buffer_start', -1);
+    add_action('get_header', 'link_rel_buffer_start');
+    add_action('wp_head', 'link_rel_buffer_end', 999);
+  }
+  /* Hijack pingback_url for get_bloginfo (<link rel="pingback" />) */
+  add_filter('bloginfo_url', function($output, $property){
+    return ($property == 'pingback_url') ? null : $output;
+  }, 11, 2);
+  add_filter( 'xmlrpc_enabled', '__return_false' ); // https://github.com/WordPress/WordPress/blob/77e365efbf2e499e2ed11d29c101ea466cf1ceed/wp-includes/class-wp-xmlrpc-server.php#L255
+  add_filter( 'pre_update_option_enable_xmlrpc', '__return_false' );
+  add_filter( 'pre_option_enable_xmlrpc', '__return_zero' ); // https://github.com/WordPress/WordPress/blob/77e365efbf2e499e2ed11d29c101ea466cf1ceed/wp-includes/class-wp-xmlrpc-server.php#L241
+  add_filter( 'pings_open', '__return_false', 10, 2 );
+  add_filter( 'rewrite_rules_array', function( $rules ) {
+    foreach( $rules as $rule => $rewrite ) {
+      if( preg_match( '/trackback\/\?\$$/i', $rule ) ) {
+        unset( $rules[$rule] );
+      }
+    }
+    return $rules;
+  });
+  /* Disable X-Pingback HTTP Header */
+  add_filter('wp_headers', function($headers, $wp_query){
+    if(isset($headers['X-Pingback'])){
+      unset($headers['X-Pingback']);
+    }
+    return $headers;
+  }, 11, 2);
+  /* XML-RCP Methods */ // https://github.com/WordPress/WordPress/blob/77e365efbf2e499e2ed11d29c101ea466cf1ceed/wp-includes/class-wp-xmlrpc-server.php#L170
+  add_filter( 'xmlrpc_methods', function($methods){
+    unset( $methods['pingback.ping'] );
+    unset( $methods['pingback.extensions.getPingbacks'] );
+    unset( $methods['wp.getUsersBlogs'] ); // Block brute force discovery of existing users
+    unset( $methods['system.multicall'] );
+    unset( $methods['system.listMethods'] );
+    unset( $methods['system.getCapabilities'] );
+    return $methods;
+  });
 }
 /* remove WordPress emoji features */ //https://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
 function theme_remove_emoji() {
@@ -104,7 +156,7 @@ function theme_add_style_property($link) {
 /* load bootstrap.min.css before style.css */
 function theme_style() {
   /* enqueue Bootstrap CSS via a CDN */
-  wp_enqueue_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', '', null, 'all');
+  wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', '', null, 'all');
   /* remove style.css */
   wp_deregister_style('twentytwelve-style');
   /* register/enqueue style.css with Bootstrap dependency */
@@ -118,7 +170,7 @@ function theme_webfonts() {
   /* register/enqueue Google Fonts Noto Sans via a CDN */
   wp_enqueue_style('noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i', '', null, all);
   /* register/enqueue Font Awesome via a CDN with Bootstrap dependency */
-  wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 'bootstrap', null, 'all');
+  wp_enqueue_style('fontawesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 'bootstrap', null, 'all');
 }
 /* add classes to Gravatar */
 function theme_add_gravatar_class($class) {
@@ -134,14 +186,14 @@ function theme_javascript() {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
     /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-3.2.1.min.js', '', null, false);
+    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-3.3.1.min.js', '', null, false);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
     /* remove wp-embed.min.js */
     wp_deregister_script('wp-embed');
   }
   /* register/enqueue Bootstrap JavaScript via a CDN with jQuery dependency before </body> */
-  wp_enqueue_script('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', 'jquery-core', null, true);
+  wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', 'jquery-core', null, true);
   /* register/enqueue navigation.js with jQuery dependency before </body> */
   wp_enqueue_script('twentytwelve-navigation', network_home_url('/', 'https') . 'wordpress/wp-content/themes/twentytwelve/js/navigation.js', 'jquery-core', null, true);
   /* register/enqueue scroll-affix.js with jQuery dependency before </body> */
@@ -178,6 +230,7 @@ add_action('wp_enqueue_scripts', 'theme_javascript');
 add_action( 'init', 'theme_remove_emoji' );
 
 add_action('after_setup_theme' , 'theme_cleaner');
+add_action('after_setup_theme' , 'theme_remove_xmlrpc');
 
 add_action('wp_footer', 'theme_webfonts');
 add_action('wp_footer', 'theme_google_analytics');
