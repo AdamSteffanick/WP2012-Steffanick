@@ -5,12 +5,33 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.10.1] - 2018-06-08
+### Added
+* [prettyprint.js]
+* [Google Code Prettify] prettify.min.css CDN ([functions.php])
+* [Google Code Prettify] lang-xq.min.js CDN ([functions.php])
+* [Google Code Prettify] prettify.min.js CDN ([functions.php])
+
+### Changed
+* [Bootstrap] CDN → [CDNJS] ([functions.php])
+* [Font Awesome] CDN → [CDNJS] ([functions.php])
+* [Google Code Prettify] → r298 ([functions.php])
+* [Google Code Prettify] CDN → [CDNJS] ([functions.php])
+* [jQuery] CDN → [CDNJS] ([functions.php])
+* [Web Font Loader] → 1.6.28 ([functions.php])
+* [Web Font Loader] CDN → [CDNJS] ([functions.php])
+
+### Removed
+* [Google Code Prettify] run_prettify.js ([functions.php])
+
 ## [0.10.0] - 2018-06-05
+### Added
+* `theme_remove_xmlrpc()` ([functions.php])
+
 ### Changed
 * [Bootstrap] CSS URI ([functions.php])
 * [Bootstrap] JS URI ([functions.php])
 * [Font Awesome] CSS URI ([functions.php])
-* function `theme_remove_xmlrpc()` ([functions.php])
 * [jQuery] → 3.3.1 ([functions.php])
 * [WordPress] Twenty Twelve → 2.5 ([style.css])
 
@@ -30,10 +51,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.9.0] - 2017-10-06
 ### Added
 * `.ipa` style ([style.css])
-* function `theme_remove_emoji()` ([functions.php])
 * [Google Fonts] Noto Serif → [webfonts.js]
 * [International Phonetic Alphabet] symbols support ([functions.php], [style.css], & [webfonts.js])
-* [Web Font Loader] 1.6.26 JavaScript CDN ([functions.php])
+* `theme_remove_emoji()` ([functions.php])
+* [Web Font Loader] 1.6.26 JS CDN ([functions.php])
 * [webfonts.js]
 
 ### Changed
@@ -41,7 +62,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [WordPress] Twenty Twelve → 2.3 ([style.css])
 
 ### Fixed
-* [WordPress] function `wpautop()` closing `<p>` elements ([functions.php])
+* [WordPress] `wpautop()` closing `<p>` elements ([functions.php])
 
 ### Removed
 * [WordPress] emoji features ([functions.php])
@@ -69,13 +90,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.8.3] - 2017-03-14
 ### Added
 * `.entry-header .entry-title` transition ([style.css])
-* function `theme_add_gravatar_class()` ([functions.php])
+* `theme_add_gravatar_class()` ([functions.php])
 
 ### Changed
 * `.author-avatar img` → circular ([style.css])
 * `.entry-header .entry-title`, `.archive-title`, `.page-title`, & `.widget-title` style ([style.css])
 * blog entries author information → [Bootstrap] media object ([content.php])
-* [Font Awesome] category icon → function `twentytwelve_entry_meta()` ([functions.php])
+* [Font Awesome] category icon → `twentytwelve_entry_meta()` ([functions.php])
 * tagline → conditional ([header.php])
 * theme footer `<p>` → `<small>` ([footer.php])
 * theme header style ([style.css])
@@ -88,11 +109,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.8.2] - 2017-03-10
 ### Added
 * author information → blog entries `<footer>` ([content.php])
-* [Font Awesome] icons → function `twentytwelve_entry_meta()` ([functions.php])
-* function `twentytwelve_entry_meta()` ([functions.php])
-* function `twentytwelve_entry_meta()` [microformats.org] author & time microdata → blog entries ([content.php])
+* [Font Awesome] icons → `twentytwelve_entry_meta()` ([functions.php])
 * “Proudly Powered By [WordPress]” → [Font Awesome] icon ([footer.php])
 * [schema.org] `copyrightHolder` & `copyrightYear` microdata → blog entries ([content.php])
+* `twentytwelve_entry_meta()` ([functions.php])
+* `twentytwelve_entry_meta()` [microformats.org] author & time microdata → blog entries ([content.php])
 
 ### Changed
 * `footer.entry-meta` style ([style.css])
@@ -155,21 +176,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * `<code>` element ([style.css])
 * [Google Code Prettify] design ([style.css])
 * URI ([README.md] & [style.css])
-* [WordPress] Emoji JavaScript → footer ([functions.php])
+* [WordPress] Emoji JS → footer ([functions.php])
 
 ### Removed
-* [browser-update.org] JavaScript ([functions.php])
+* [browser-update.org] JS ([functions.php])
 * enequeue _addtoany.min.css_ ([functions.php])
 
 ## [0.7.2] - 2016-04-28
 ### Added
 * `#site-title` & `#colophon` for HTML5 fixes ([style.css])
-* function `theme_add_style_property()` ([functions.php])
+* `theme_add_style_property()` ([functions.php])
 * [HTML5 Validator] link ([footer.php])
 
 ### Changed
 * [Font Awesome] → footer ([functions.php])
-* function `theme_google_webfonts()` → `theme_webfonts` ([functions.php])
+* `theme_google_webfonts()` → `theme_webfonts` ([functions.php])
 * HTML5 header elements ([scroll-affix.js])
 
 ### Fixed
@@ -190,7 +211,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Removed
 * `.past-hgroup` ([style.css])
-* function `theme_scroll_changes()` ([functions.php])
+* `theme_scroll_changes()` ([functions.php])
 
 ### Fixed
 * scroll changes `$(document).on('ready', function() {` → `$(document).ready(function() {` ([scroll-affix.js])
@@ -198,7 +219,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.7.0] - 2016-04-25
 ### Added
 * [header.php]
-* [browser-update.org] JavaScript ([functions.php])
+* [browser-update.org] JS ([functions.php])
 * [Font Awesome] 4.6.1 CSS CDN ([functions.php])
 
 ### Changed
@@ -214,7 +235,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * enequeue _addtoany.min.css_ ([functions.php])
 
 ### Changed
-* [Google Fonts] method ~~JavaScript~~ → CSS ([functions.php])
+* [Google Fonts] method ~~JS~~ → CSS ([functions.php])
 
 ### Removed
 * stylesheet ID attributes ([functions.php])
@@ -222,7 +243,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * support for older versions of Internet Explorer ([functions.php])
 
 ### Fixed
-* local theme CSS & JavaScript → use Multisite network home URL ([functions.php])
+* local theme CSS & JS → use Multisite network home URL ([functions.php])
 
 ## [0.6.6] - 2016-04-21
 ### Changed
@@ -273,21 +294,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.6.0] - 2016-04-08
 ### Added
 * escape HTML in `<code>` elements ([functions.php])
-* [Google Code Prettify] CDN ([functions.php])
+* [Google Code Prettify] JS CDN ([functions.php])
 * [Google Code Prettify] line numbers ([style.css])
 
 ## [0.5.0] - 2016-03-31
 ### Added
 * [Bootstrap] 3.3.6 CSS ([style.css])
 * [Bootstrap] 3.3.6 Glyphicons CDN ([style.css])
-* [Bootstrap] 3.3.6 JavaScript CDN ([functions.php])
+* [Bootstrap] 3.3.6 JS CDN ([functions.php])
 * [jQuery] CDN ([functions.php])
 * lazy loading → [Google Custom Search Engine] ([functions.php])
 * RSS blog archives ([archives.php])
 * `setTimeout` focus → search ([functions.php])
 
 ### Changed
-* font JavaScript ([functions.php])
+* font JS ([functions.php])
 * lazy loading → [Google Custom Search Engine] ([searchform.php])
 
 ### Removed
@@ -309,7 +330,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [0.3.1] - 2016-02-06
 ### Changed
-* [Google Analytics], [Google API Key], & [Google Fonts] JavaScript → footer ([functions.php])
+* [Google Analytics], [Google API Key], & [Google Fonts] JS → footer ([functions.php])
 
 ## [0.3.0] - 2015-07-25
 ### Added
@@ -347,7 +368,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.1...HEAD
+[0.10.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.1...v0.10.0
 [0.9.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.0...v0.9.1
 [0.9.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.8.4...v0.9.0
@@ -388,6 +410,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [footer.php]: ./footer.php
 [functions.php]: ./functions.php
 [LISENCE]: https://github.com/AdamSteffanick/wp2012-s/blob/master/LICENSE
+[prettyprint.js]: ./js/prettyprint.js
 [README.md]: ./README.md
 [scroll-affix.js]: ./js/scroll-affix.js
 [searchform.php]: ./searchform.php
@@ -396,6 +419,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 [Bootstrap]: http://getbootstrap.com/
 [browser-update.org]: http://browser-update.org/
+[CDNJS]: https://cdnjs.com/
 [CSS3 Validator]: https://jigsaw.w3.org/css-validator/
 [Font Awesome]: http://fontawesome.io/
 [Google Analytics]: https://www.google.com/analytics/

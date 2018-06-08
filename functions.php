@@ -156,7 +156,9 @@ function theme_add_style_property($link) {
 /* load bootstrap.min.css before style.css */
 function theme_style() {
   /* enqueue Bootstrap CSS via a CDN */
-  wp_enqueue_style('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', '', null, 'all');
+  wp_enqueue_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css', '', null, 'all');
+  /* register/enqueue Google Code Prettify CSS via a CDN */
+  wp_enqueue_style('google-code_prettify', 'https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css', '', null, 'all');
   /* remove style.css */
   wp_deregister_style('twentytwelve-style');
   /* register/enqueue style.css with Bootstrap dependency */
@@ -170,7 +172,7 @@ function theme_webfonts() {
   /* register/enqueue Google Fonts Noto Sans via a CDN */
   wp_enqueue_style('noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i', '', null, all);
   /* register/enqueue Font Awesome via a CDN with Bootstrap dependency */
-  wp_enqueue_style('fontawesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 'bootstrap', null, 'all');
+  wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', 'bootstrap', null, 'all');
 }
 /* add classes to Gravatar */
 function theme_add_gravatar_class($class) {
@@ -179,29 +181,32 @@ function theme_add_gravatar_class($class) {
 }
 /* =JavaScript Functions
 -------------------------------------------------------------- */
-/* load jquery.min.js (CDN), bootstrap.min.js (CDN), navigation.js, scroll-affix.js and run_prettify.js (CDN); remove jQuery Migrate */
+/* load jquery.min.js (CDN), bootstrap.min.js (CDN), navigation.js, scroll-affix.js and prettify.min.js (CDN); remove jQuery Migrate */
 function theme_javascript() {
   /* load jQuery via a CDN unless logged in as an administrator */
   if (!is_admin()) {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
     /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://code.jquery.com/jquery-3.3.1.min.js', '', null, false);
+    wp_enqueue_script('jquery-core', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', '', null, false);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
     /* remove wp-embed.min.js */
     wp_deregister_script('wp-embed');
   }
   /* register/enqueue Bootstrap JavaScript via a CDN with jQuery dependency before </body> */
-  wp_enqueue_script('bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js', 'jquery-core', null, true);
+  wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js', 'jquery-core', null, true);
   /* register/enqueue navigation.js with jQuery dependency before </body> */
   wp_enqueue_script('twentytwelve-navigation', network_home_url('/', 'https') . 'wordpress/wp-content/themes/twentytwelve/js/navigation.js', 'jquery-core', null, true);
   /* register/enqueue scroll-affix.js with jQuery dependency before </body> */
   wp_enqueue_script('scroll-affix', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/scroll-affix.js', 'jquery-core', null, true);
   /* register/enqueue Google Code Prettify JavaScript via a CDN before </body> */
-  wp_enqueue_script('google-code_prettify', 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js', '', null, true);
+  wp_enqueue_script('google-code_prettify', 'https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js', '', null, true);
+  wp_enqueue_script('google-code_prettify-xq', 'https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/lang-xq.min.js', 'google-code_prettify', null, true);
+  /* register/enqueue prettyprint.js  with jQuery dependency before </body> */
+  wp_enqueue_script('prettyprint', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/prettyprint.js', 'jquery-core', null, true);
   /* register/enqueue Web Font Loader JavaScript via a CDN before </body> */
-  wp_enqueue_script('webfontloader', 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', '', null, true);
+  wp_enqueue_script('webfontloader', 'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js', '', null, true);
   /* register/enqueue webfonts.js with Web Font Loader dependency before </body> */
   wp_enqueue_script('webfonts', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/webfonts.js', 'webfontloader', null, true);
 }
