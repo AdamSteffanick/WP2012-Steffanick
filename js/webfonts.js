@@ -1,6 +1,6 @@
 WebFont.load({
   custom: {
-    families: ["Noto Mono", "Noto Serif", "Noto Sans Symbols", "Geneva"]
+    families: ["Noto Mono", "Noto Serif", "FreeSerif", "Geneva"]
   },
   loading: function () {
     console.log("loading");

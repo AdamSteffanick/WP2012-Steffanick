@@ -5,7 +5,7 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://www.steffanick.com/
 Template: twentytwelve
-Version: 0.10.1
+Version: 0.10.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -2715,7 +2715,7 @@ footer.entry-meta .fa-li {
 /* =IPA Symbols
 -------------------------------------------------------------- */
 .ipa {
-  font-family: "Noto Serif", "Times New Roman", "Noto Sans Symbols", "Geneva" !important;
+  font-family: "Noto Serif", "FreeSerif", "Geneva" !important;
   font-weight: 400 !important;
 }
 /* =Cheatsheets
@@ -2749,27 +2749,27 @@ footer.entry-meta .fa-li {
 -------------------------------------------------------------- */
 @font-face {
   font-family: 'Noto Mono';
-  font-style: normal;
-  font-weight: normal; 
   src: local('Noto Mono'), local('NotoMono'), url("/static/fonts/NotoMono-Regular.woff2") format('woff2'), url("/static/fonts/NotoMono.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
   font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: normal;
   src: local('Noto Serif'), local('NotoSerif'), url("/static/fonts/NotoSerif-Regular.woff2") format('woff2'), url("/static/fonts/NotoSerif.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-  font-family: 'Noto Sans Symbols';
+  font-family: 'FreeSerif';
+  src: local('FreeSerif'), url("/static/fonts/FreeSerif.woff2") format('woff2'), url("/static/fonts/FreeSerif.woff") format('woff');
+  unicode-range: U+1D18F, U+1D191;
+  font-weight: normal;
   font-style: normal;
-  font-weight: normal; 
-  src: local('Noto Sans Symbols'), local('NotoSansSymbols'), url("/static/fonts/NotoSansSymbols-Regular.woff2") format('woff2'), url("/static/fonts/NotoSansSymbols.woff") format('woff');
-/*  unicode-range: U+1D18F, U+1D191, U+1D44E, U+1D452, U+1D454, U+1D459, U+1D45B, U+1D45C, U+1D45F, U+1D461;*/
 }
 @font-face {
   font-family: 'Geneva';
-  font-style: normal;
-  font-weight: normal;
   src: local('Geneva'), url("/static/fonts/Geneva.woff2") format('woff2'), url("/static/fonts/Geneva.woff") format('woff');
-/*  unicode-range: U+A7F8-A7F9;*/
+  unicode-range: U+A7F8-A7F9;
+  font-weight: normal;
+  font-style: normal;
 }
