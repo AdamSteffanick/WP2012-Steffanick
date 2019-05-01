@@ -135,8 +135,14 @@ function theme_remove_emoji() {
   remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
   /* remove TinyMCE emoji */
   add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
-  /* remove eomji DNS prefetch */
+  /* remove emoji DNS prefetch */
   add_filter( 'emoji_svg_url', '__return_false' );
+}
+/* remove WordPress Gutenberg features */ //https://stackoverflow.com/questions/52277629/remove-gutenberg-css
+function theme_remove_gutenberg() {
+  /* all actions related to Gutenberg */
+  wp_dequeue_style('wp-block-library');
+  wp_dequeue_style('wp-block-library-theme');
 }
 /* remove support for older versions of Internet Explorer */
 function theme_remove_old_ie_support() {
@@ -156,7 +162,7 @@ function theme_add_style_property($link) {
 /* load bootstrap.min.css before style.css */
 function theme_style() {
   /* enqueue Bootstrap CSS via a CDN */
-  wp_enqueue_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css', '', null, 'all');
+  wp_enqueue_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css', '', null, 'all');
   /* register/enqueue Google Code Prettify CSS via a CDN */
   wp_enqueue_style('google-code_prettify', 'https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css', '', null, 'all');
   /* remove style.css */
@@ -188,14 +194,14 @@ function theme_javascript() {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
     /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', '', null, false);
+    wp_enqueue_script('jquery-core', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js', '', null, false);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
     /* remove wp-embed.min.js */
     wp_deregister_script('wp-embed');
   }
   /* register/enqueue Bootstrap JavaScript via a CDN with jQuery dependency before </body> */
-  wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js', 'jquery-core', null, true);
+  wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js', 'jquery-core', null, true);
   /* register/enqueue navigation.js with jQuery dependency before </body> */
   wp_enqueue_script('twentytwelve-navigation', network_home_url('/', 'https') . 'wordpress/wp-content/themes/twentytwelve/js/navigation.js', 'jquery-core', null, true);
   /* register/enqueue scroll-affix.js with jQuery dependency before </body> */
@@ -232,10 +238,13 @@ add_action('wp_enqueue_scripts', 'theme_remove_open_sans', 11);
 add_action('wp_enqueue_scripts', 'theme_remove_old_ie_support', 11);
 add_action('wp_enqueue_scripts', 'theme_javascript');
 
-add_action( 'init', 'theme_remove_emoji' );
+add_action('init', 'theme_remove_emoji' );
 
-add_action('after_setup_theme' , 'theme_cleaner');
-add_action('after_setup_theme' , 'theme_remove_xmlrpc');
+add_filter('use_block_editor_for_post_type', '__return_false', 10);
+add_action('wp_print_styles', 'theme_remove_gutenberg');
+
+add_action('after_setup_theme', 'theme_cleaner');
+add_action('after_setup_theme', 'theme_remove_xmlrpc');
 
 add_action('wp_footer', 'theme_webfonts');
 add_action('wp_footer', 'theme_google_analytics');

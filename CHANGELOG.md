@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.11.0] - 2019-05-01
+### Changed
+* [Bootstrap] CSS → 3.4.1 ([functions.php])
+* [Bootstrap] JS → 3.4.1 ([functions.php])
+* [jQuery] → 3.4.0 ([functions.php])
+* `theme_remove_gutenberg()` ([functions.php])
+* [WordPress] Twenty Twelve → 2.9 ([style.css])
+
+### Removed
+* [WordPress] Gutenberg features ([functions.php])
+
 ## [0.10.2] - 2018-06-13
 ### Added
 * `@font-face` rules for FreeSerif → [style.css]
@@ -380,7 +391,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.2...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.2...v0.11.0
 [0.10.2]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.9.1...v0.10.0
