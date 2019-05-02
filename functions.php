@@ -144,6 +144,11 @@ function theme_remove_gutenberg() {
   wp_dequeue_style('wp-block-library');
   wp_dequeue_style('wp-block-library-theme');
 }
+function theme_remove_gutenberg_2012() {
+  /* all actions related to Gutenberg for Twentytwelve */
+  wp_deregister_style('twentytwelve-block-style');
+  wp_deregister_style('twentytwelve-block-editor-style');
+}
 /* remove support for older versions of Internet Explorer */
 function theme_remove_old_ie_support() {
   /* remove ie.css */
@@ -240,8 +245,9 @@ add_action('wp_enqueue_scripts', 'theme_javascript');
 
 add_action('init', 'theme_remove_emoji' );
 
-add_filter('use_block_editor_for_post_type', '__return_false', 10);
+add_filter('use_block_editor_for_post_type', '__return_false');
 add_action('wp_print_styles', 'theme_remove_gutenberg');
+add_action('wp_enqueue_scripts', 'theme_remove_gutenberg_2012', 11);
 
 add_action('after_setup_theme', 'theme_cleaner');
 add_action('after_setup_theme', 'theme_remove_xmlrpc');
