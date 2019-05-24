@@ -5,6 +5,31 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [Unreleased]
 
+## [0.11.2] - 2019-05-24
+### Added
+* `@font-face` rules for Noto Sans, Noto Sans Bold, Noto Sans Italic, & Noto Sans Bold Italic → [style.css]
+* `@font-face` `font-display` rules for Geneva, FreeSerif, Noto Mono, Noto Sans, & Noto Serif → [style.css]
+* [Font Awesome] brands.js, fontawesome.js, solid.js, & v4-shim JS → `theme_javascript()` ([functions.php])
+
+### Changed
+* `.widget-area .textwidget li` `margin-left` → `0` ([style.css])
+* [Font Awesome] → 5.8.2 ([functions.php])
+* [Font Awesome] using CSS → using JS ([functions.php])
+* [Google Code Prettify] → b5fa4d1 ([functions.php])
+* [jQuery] → 3.4.1 slim ([functions.php])
+
+### Removed
+* [Bootstrap] CDN ([functions.php])
+* [Google Code Prettify] CDN ([functions.php])
+* Noto Sans ([functions.php])
+* prettyprint.js
+* [jQuery] CDN ([functions.php])
+* `theme_add_style_property()` ([functions.php])
+* `theme_webfonts()` ([functions.php])
+* [Web Font Loader] ([functions.php])
+* webfonts.js
+* [WordPress] DNS Prefetching ([functions.php])
+
 ## [0.11.1] - 2019-05-02
 ### Added
 * `theme_remove_gutenberg_2012()` ([functions.php])
@@ -25,18 +50,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.10.2] - 2018-06-13
 ### Added
 * `@font-face` rules for FreeSerif → [style.css]
-* FreeSerif → [webfonts.js]
+* FreeSerif → webfonts.js
 
 ### Changed
 * `.ipa` style `"Noto Serif", "Times New Roman", "Noto Sans Symbols", "Geneva"` → `"Noto Serif", "FreeSerif", "Geneva"` ([style.css])
 
 ### Removed
 * `@font-face` rules for Noto Sans Symbols → [style.css]
-* Noto Sans Symbols → [webfonts.js]
+* Noto Sans Symbols → webfonts.js
 
 ## [0.10.1] - 2018-06-08
 ### Added
-* [prettyprint.js]
+* prettyprint.js
 * [Google Code Prettify] prettify.min.css CDN ([functions.php])
 * [Google Code Prettify] lang-xq.min.js CDN ([functions.php])
 * [Google Code Prettify] prettify.min.js CDN ([functions.php])
@@ -70,21 +95,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## [0.9.1] - 2017-10-09
 ### Added
 * `@font-face` rules for Geneva, Noto Mono, Noto Sans Symbols, & Noto Serif → [style.css]
-* Geneva → [webfonts.js]
-* Noto Mono → [webfonts.js]
-* Noto Sans Symbols → [webfonts.js]
+* Geneva → webfonts.js
+* Noto Mono → webfonts.js
+* Noto Sans Symbols → webfonts.js
 
 ### Changed
-* [Google Fonts] Noto Serif → Noto Serif [webfonts.js]
+* [Google Fonts] Noto Serif → Noto Serif webfonts.js
 
 ## [0.9.0] - 2017-10-06
 ### Added
 * `.ipa` style ([style.css])
-* [Google Fonts] Noto Serif → [webfonts.js]
-* [International Phonetic Alphabet] symbols support ([functions.php], [style.css], & [webfonts.js])
+* [Google Fonts] Noto Serif → webfonts.js
+* [International Phonetic Alphabet] symbols support ([functions.php], [style.css], & webfonts.js)
 * `theme_remove_emoji()` ([functions.php])
 * [Web Font Loader] 1.6.26 JS CDN ([functions.php])
-* [webfonts.js]
+* webfonts.js
 
 ### Changed
 * [jQuery] → 3.2.1 ([functions.php])
@@ -397,7 +422,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 * [LISENCE]
 * [README.md]
 
-[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.11.1...HEAD
+[Unreleased]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.11.2...HEAD
+[0.11.2]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.11.1...v0.11.2
 [0.11.1]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.11.0...v0.11.1
 [0.11.0]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.2...v0.11.0
 [0.10.2]: https://github.com/AdamSteffanick/wp2012-s/compare/v0.10.1...v0.10.2
@@ -442,12 +468,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [footer.php]: ./footer.php
 [functions.php]: ./functions.php
 [LISENCE]: https://github.com/AdamSteffanick/wp2012-s/blob/master/LICENSE
-[prettyprint.js]: ./js/prettyprint.js
 [README.md]: ./README.md
 [scroll-affix.js]: ./js/scroll-affix.js
 [searchform.php]: ./searchform.php
 [style.css]: ./style.css
-[webfonts.js]: ./js/webfonts.js
 
 [Bootstrap]: http://getbootstrap.com/
 [browser-update.org]: http://browser-update.org/

@@ -158,32 +158,25 @@ function theme_remove_old_ie_support() {
 function theme_remove_style_id($link) {
   return preg_replace("/id='.*-css'/", '', $link);
 }
-/* add property attribute to stylesheets */
-function theme_add_style_property($link) {
-  return preg_replace("/rel=\'stylesheet\'/", 'rel=\'stylesheet\' property=\'stylesheet\'', $link);
-}
 /* =CSS Functions
 -------------------------------------------------------------- */
-/* load bootstrap.min.css before style.css */
+/* load bootstrap.css and prettify.css before style.css */
 function theme_style() {
-  /* enqueue Bootstrap CSS via a CDN */
-  wp_enqueue_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css', '', null, 'all');
-  /* register/enqueue Google Code Prettify CSS via a CDN */
-  wp_enqueue_style('google-code_prettify', 'https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css', '', null, 'all');
+  /* register/enqueue Font Awesome and the v4-shim CSS */
+  wp_enqueue_style('fontawesome', 'https://www.steffanick.com/static/modules/fontawesome/5.8.2/css/all.css', '', null, 'all');
+  wp_enqueue_style('fontawesome_v4-shim', 'https://www.steffanick.com/static/modules/fontawesome/5.8.2/css/v4-shims.css', '', null, 'all');
+  /* enqueue Bootstrap CSS */
+  wp_enqueue_style('bootstrap', 'https://www.steffanick.com/static/modules/bootstrap/3.4.1/css/bootstrap.css', '', null, 'all');
+  /* register/enqueue Google Code Prettify CSS with Bootstrap dependency */
+  wp_enqueue_style('google-code_prettify', 'https://www.steffanick.com/static/modules/prettify/b5fa4d1/prettify.css', 'bootstrap', null, 'all');
   /* remove style.css */
   wp_deregister_style('twentytwelve-style');
-  /* register/enqueue style.css with Bootstrap dependency */
-  wp_enqueue_style('twentytwelve-style', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/style.css', 'bootstrap', null, all);
+  /* register/enqueue style.css with Google Code Prettify dependency */
+  wp_enqueue_style('twentytwelve-style', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/style.css', 'google-code_prettify', null, all);
 }
 /* remove the Open Sans font */
 function theme_remove_open_sans() {
   wp_deregister_style('twentytwelve-fonts');
-}
-function theme_webfonts() {
-  /* register/enqueue Google Fonts Noto Sans via a CDN */
-  wp_enqueue_style('noto-sans', 'https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i', '', null, all);
-  /* register/enqueue Font Awesome via a CDN with Bootstrap dependency */
-  wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', 'bootstrap', null, 'all');
 }
 /* add classes to Gravatar */
 function theme_add_gravatar_class($class) {
@@ -192,34 +185,30 @@ function theme_add_gravatar_class($class) {
 }
 /* =JavaScript Functions
 -------------------------------------------------------------- */
-/* load jquery.min.js (CDN), bootstrap.min.js (CDN), navigation.js, scroll-affix.js and prettify.min.js (CDN); remove jQuery Migrate */
+/* load jQuery, Bootstrap, navigation.js, scroll-affix.js and Google Code Prettify; remove jQuery Migrate */
 function theme_javascript() {
   /* load jQuery via a CDN unless logged in as an administrator */
   if (!is_admin()) {
     /* remove local jQuery JavaScript */
     wp_deregister_script('jquery-core');
-    /* register/enqueue jQuery JavaScript via a CDN in the <head> */
-    wp_enqueue_script('jquery-core', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js', '', null, false);
+    /* register/enqueue jQuery slim JavaScript before </body> */
+    wp_enqueue_script('jquery-core', 'https://www.steffanick.com/static/modules/jquery/jquery-3.4.1.slim.js', '', null, true);
     /* remove jQuery Migrate */
     wp_deregister_script('jquery-migrate');
     /* remove wp-embed.min.js */
     wp_deregister_script('wp-embed');
   }
-  /* register/enqueue Bootstrap JavaScript via a CDN with jQuery dependency before </body> */
-  wp_enqueue_script('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js', 'jquery-core', null, true);
+  /* register/enqueue Bootstrap JavaScript with jQuery dependency before </body> */
+  wp_enqueue_script('bootstrap', 'https://www.steffanick.com/static/modules/bootstrap/3.4.1/js/bootstrap.js', 'jquery-core', null, true);
   /* register/enqueue navigation.js with jQuery dependency before </body> */
   wp_enqueue_script('twentytwelve-navigation', network_home_url('/', 'https') . 'wordpress/wp-content/themes/twentytwelve/js/navigation.js', 'jquery-core', null, true);
   /* register/enqueue scroll-affix.js with jQuery dependency before </body> */
   wp_enqueue_script('scroll-affix', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/scroll-affix.js', 'jquery-core', null, true);
-  /* register/enqueue Google Code Prettify JavaScript via a CDN before </body> */
-  wp_enqueue_script('google-code_prettify', 'https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js', '', null, true);
-  wp_enqueue_script('google-code_prettify-xq', 'https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/lang-xq.min.js', 'google-code_prettify', null, true);
-  /* register/enqueue prettyprint.js  with jQuery dependency before </body> */
-  wp_enqueue_script('prettyprint', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/prettyprint.js', 'jquery-core', null, true);
-  /* register/enqueue Web Font Loader JavaScript via a CDN before </body> */
-  wp_enqueue_script('webfontloader', 'https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js', '', null, true);
-  /* register/enqueue webfonts.js with Web Font Loader dependency before </body> */
-  wp_enqueue_script('webfonts', network_home_url('/', 'https') . 'wordpress/wp-content/themes/' . strtolower(wp_get_theme()) .'/js/webfonts.js', 'webfontloader', null, true);
+  /* register/enqueue prettyprint.js with jQuery dependency before </body> */
+  wp_enqueue_script('prettyprint', 'https://www.steffanick.com/static/modules/prettify/prettyprint.js', 'jquery-core', null, true);
+  /* register/enqueue Google Code Prettify JavaScript with prettyprint.js dependency before </body> */
+  wp_enqueue_script('google-code_prettify', 'https://www.steffanick.com/static/modules/prettify/b5fa4d1/prettify.js', 'prettyprint', null, true);
+  wp_enqueue_script('google-code_prettify-xq', 'https://www.steffanick.com/static/modules/prettify/b5fa4d1/lang-xq.js', 'google-code_prettify', null, true);
 }
 /* include Google Analytics */
 function theme_google_analytics() {
@@ -234,7 +223,6 @@ remove_filter('the_excerpt', 'wpautop');
 add_filter('the_content', 'theme_code_esc_html', 1);
 add_filter('wpseo_json_ld_search_url', 'theme_change_json_ld_search_url');
 add_filter('style_loader_tag' , 'theme_remove_style_id');
-add_filter('style_loader_tag' , 'theme_add_style_property');
 add_filter('get_avatar' , 'theme_add_gravatar_class');
 add_filter('wp_calculate_image_srcset_meta', '__return_null'); //http://wordpress.stackexchange.com/questions/211375/how-do-i-disable-responsive-images-in-wp-4-4
 
@@ -252,6 +240,6 @@ add_action('wp_enqueue_scripts', 'theme_remove_gutenberg_2012', 11);
 add_action('after_setup_theme', 'theme_cleaner');
 add_action('after_setup_theme', 'theme_remove_xmlrpc');
 
-add_action('wp_footer', 'theme_webfonts');
+remove_action( 'wp_head', 'wp_resource_hints', 2 ); //remove WP 4.9+ DNS Prefetching
 add_action('wp_footer', 'theme_google_analytics');
 ?>

@@ -5,7 +5,7 @@ Author: Adam Steffanick
 Author URI: https://www.steffanick.com/adam/
 Description: A child theme of Twenty Twelve built for https://www.steffanick.com/
 Template: twentytwelve
-Version: 0.11.1
+Version: 0.11.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1821,7 +1821,12 @@ img#wpstats {
 }
 
 /* =WP2012-S
+https://github.com/AdamSteffanick/wp2012-s
 --------------------------------------------------------------
+
+/* =Wordpress
+-------------------------------------------------------------- */
+
 /* =Notes
 --------------------------------------------------------------
 This stylesheet uses rem values with a pixel fallback. The rem
@@ -1841,7 +1846,7 @@ rgb(17,28,36)
 -------------------------------------------------------------- */
 /* Body, links, basics */
 body {
-  font-family: sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: rgb(17,28,36);
 }
 body.custom-font-enabled {
@@ -1962,6 +1967,11 @@ header {
   -webkit-transition: color 400ms ease;
   transition: color 400ms ease;
 }
+
+.widget-area .textwidget li {
+	margin-left: 0;
+}
+
 /* Navigation Menu */
 .main-navigation a {
   color: rgb(0,56,226);
@@ -2716,7 +2726,7 @@ footer.entry-meta .fa-li {
 -------------------------------------------------------------- */
 .ipa {
   font-family: "Noto Serif", "FreeSerif", "Geneva" !important;
-  font-weight: 400 !important;
+  font-weight: normal !important;
 }
 /* =Cheatsheets
 -------------------------------------------------------------- */
@@ -2745,22 +2755,76 @@ footer.entry-meta .fa-li {
 .cheatsheet .dl-horizontal dd {
   margin: 0 0 1rem;
 }
-/* =Font
+/* =Fonts
 -------------------------------------------------------------- */
+/* Prose */
 @font-face {
-  font-family: 'Noto Mono';
-  src: local('Noto Mono'), local('NotoMono'), url("/static/fonts/NotoMono-Regular.woff2") format('woff2'), url("/static/fonts/NotoMono.woff") format('woff');
+  font-family: 'Noto Sans';
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+  src:
+    local('Noto Sans'),
+    local('NotoSans'),
+    url("/static/fonts/NotoSans-Regular.woff2") format('woff2'),
+    url("/static/fonts/NotoSans-Regular.woff") format('woff');
 }
 @font-face {
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('Noto Sans Bold'),
+    local('NotoSans-Bold'),
+    url("/static/fonts/NotoSans-Bold.woff2") format('woff2'),
+    url("/static/fonts/NotoSans-Bold.woff") format('woff');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('Noto Sans Italic'),
+    local('NotoSans-Italic'),
+    url("/static/fonts/NotoSans-Italic.woff2") format('woff2'),
+    url("/static/fonts/NotoSans-Italic.woff") format('woff');
+}
+@font-face {
+  font-family: 'Noto Sans';
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+  src:
+    local('Noto Sans Bold Italic'),
+    local('NotoSans-BoldItalic'),
+    url("/static/fonts/NotoSans-BoldItalic.woff2") format('woff2'),
+    url("/static/fonts/NotoSans-BoldItalic.woff") format('woff');
+}
+/* Code */
+@font-face {
+  font-family: 'Noto Mono';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src:
+    local('Noto Mono'),
+    local('NotoMono'),
+    url("/static/fonts/NotoMono-Regular.woff2") format('woff2'),
+    url("/static/fonts/NotoMono-Regular.woff") format('woff');
+}
+/* IPA Symbols */
+@font-face {
   font-family: 'Noto Serif';
-  src: local('Noto Serif'), local('NotoSerif'), url("/static/fonts/NotoSerif-Regular.woff2") format('woff2'), url("/static/fonts/NotoSerif.woff") format('woff');
+  font-display: swap;
+  src: local('Noto Serif'), local('NotoSerif'), url("/static/fonts/NotoSerif-Regular.woff2") format('woff2'), url("/static/fonts/NotoSerif-Regular.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'FreeSerif';
+  font-display: swap;
   src: local('FreeSerif'), url("/static/fonts/FreeSerif.woff2") format('woff2'), url("/static/fonts/FreeSerif.woff") format('woff');
   unicode-range: U+1D18F, U+1D191;
   font-weight: normal;
@@ -2768,6 +2832,7 @@ footer.entry-meta .fa-li {
 }
 @font-face {
   font-family: 'Geneva';
+  font-display: swap;
   src: local('Geneva'), url("/static/fonts/Geneva.woff2") format('woff2'), url("/static/fonts/Geneva.woff") format('woff');
   unicode-range: U+A7F8-A7F9;
   font-weight: normal;
